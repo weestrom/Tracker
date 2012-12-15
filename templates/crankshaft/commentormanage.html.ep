@@ -1,0 +1,20 @@
+%layout 'standard';
+ <% content 'header' => begin%>
+   <title><%= $blogname %> :: Manage Commentors</title>
+   
+ <% end %>
+   
+        <h1><%= link_to $blogname => '/' %></h1>
+    	<h2> Manage Commentors</h2><br />
+    	
+    	<%= link_to 'Add Commentor' => '/addcommentor' %>
+        
+        <ul>
+        % while ( my $commentor_row = $commentor_rs->next) {
+    		<li><form action="deletecommentor" method="POST">
+        	<%= $commentor_row->username %> <input type="hidden" name="idcommentors" value="<%= $commentor_row->idcommentors %>" />
+        		<input type="submit" value="Delete"></form></li>
+    	% }
+        </ul>
+        	
+

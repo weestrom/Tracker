@@ -1,0 +1,33 @@
+%layout 'standard';
+
+ <% content 'header' => begin%>
+   <title><%= $blogname %></title>
+   
+<% end %>
+   
+        <h1><%= $blogname %></h1>
+        % if ( !$username ) {
+        
+        <%= link_to 'Login' => '/adminlogin' %> <br />
+        %}
+        % else {
+        <%= 'Logged in as '.$username %> <br />
+        <%= link_to 'Admin' => '/admin' %> | <%= link_to 'Logout' => '/logout' %>
+        %} 	
+
+        % my %article = ();
+        % while ( my $frontpage_row = $frontpage_rs->next) {
+        	% %article = $frontpage_row->get_columns;
+        	<hr />
+        	<%#	TODO: Make this a link %>
+            <h2><%= link_to $article{title} => '/articles/' . $article{posturl} %></h2>
+        	<h3> Posted by  <%= link_to $article{username} => '/authors/' . $article{username} %> on
+        	<%= $article{datelastedited}  %></h3>
+        	<%= $article{text}  %>
+        <%#	TODO: Add number of comments to frontpage database view query 
+        	and insert here%> 
+        	
+        % }
+        
+        <hr />
+        

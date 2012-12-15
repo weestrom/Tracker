@@ -1,0 +1,23 @@
+%layout 'standard';
+ <% content 'header' => begin%>
+   <title><%= $blogname %> :: <%= $commentor_row->username %>'s Profile</title>
+   
+ <% end %>
+   
+        <h1><%= link_to $blogname => '/' %></h1>
+    	<h2> <%= $commentor_row->username %>'s Profile</h2>
+    	% if ($commentorname) {
+    	<%= link_to 'Edit Profile' => '/editcommentor' %> 
+        % }
+        
+        <dl>
+		  <dt>Real Name:</dt>
+		    <dd><%= $commentor_row->firstname %> <%= $commentor_row->lastname %></dd>
+		  <dt>Homepage:</dt>
+		    <dd><%= $commentor_row->homepage %></dd>
+		  <dt>email:</dt>
+		    <dd><%= $commentor_row->email %></dd>
+		  <dt>Commentor Since:</dt>
+		    <dd><%= $commentor_row->dateregistered %></dd>
+		 </dl> 	
+

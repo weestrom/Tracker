@@ -1,0 +1,20 @@
+%layout 'standard';
+ <% content 'header' => begin%>
+   <title><%= $blogname %> :: Edit <%= $username %>'s Profile</title>
+   
+ <% end %>
+   
+        <h1><%= link_to $blogname => '/' %></h1>
+    	<h2> Edit <%= $username %>'s Profile</h2>
+        
+        <form action="profileedit" method="POST">
+        <ul>
+        	<li> First Name:<input type="text" name="firstname" value="<%= $author_row->firstname %>" /></li>
+         	<li> Last Name:<input type="text" name="lastname" value="<%= $author_row->lastname %>" /></li>
+         	<li> email:<input type="text" name="email" value="<%= $author_row->email %>" /></li>
+         	<li> Hompage:<input type="text" name="homepage" value="<%= $author_row->homepage %>" /></li>
+        	<li> Birthdate:<input type="text" name="birthdate" value="<%= $author_row->birthdate %>" /></li>
+        	<li>About: <textarea name="about" rows="40" cols="80"><%= $author_row->about %></textarea></li>
+        		
+        </ul>
+        <input type="submit" value="Submit" />

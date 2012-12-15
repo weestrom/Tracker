@@ -1,0 +1,14 @@
+<config>
+  <application heading="Application Settings">
+    <blogname prompt="Blog Name:" value="CornHusk" />
+  </application>
+  <database heading="Database Settings">
+    <password prompt="Password" value="GU-eYu3ujAje!het" />
+    <schema prompt="Schema Name:" value="blog" />
+    <server prompt="Sever Name:" value="localhost" />
+    <user prompt="User Name:" value="root" />
+  </database>
+  <posts heading="Post Settings">
+    <posturlstyle prompt="URL Style:" value="readable_title" />
+  </posts>
+</config>
