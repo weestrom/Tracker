@@ -29,7 +29,7 @@ __PACKAGE__->table("Data");
   is_nullable: 0
   size: 36
 
-=head2 date
+=head2 recdate
 
   data_type: 'date'
   datetime_undef_if_invalid: 1
@@ -81,7 +81,7 @@ __PACKAGE__->table("Data");
   is_nullable: 0
   size: 8
 
-=head2 timestamp
+=head2 rectimestamp
 
   data_type: 'timestamp'
   datetime_undef_if_invalid: 1
@@ -93,7 +93,7 @@ __PACKAGE__->table("Data");
 __PACKAGE__->add_columns(
   "uuid",
   { data_type => "char", is_nullable => 0, size => 36 },
-  "date",
+  "recdate",
   { data_type => "date", datetime_undef_if_invalid => 1, is_nullable => 1 },
   "tracnum",
   { data_type => "integer", is_nullable => 1 },
@@ -115,7 +115,7 @@ __PACKAGE__->add_columns(
   { data_type => "char", is_nullable => 1, size => 30 },
   "direction",
   { data_type => "char", is_nullable => 0, size => 8 },
-  "timestamp",
+  "rectimestamp",
   {
     data_type => "timestamp",
     datetime_undef_if_invalid => 1,
@@ -137,8 +137,8 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("uuid");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07033 @ 2012-12-15 16:27:01
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:4hC8J/J0PG2f0PshIrFVqQ
+# Created by DBIx::Class::Schema::Loader v0.07033 @ 2012-12-16 11:12:03
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:QcW5SEk3lSBLyEluh9lMcA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

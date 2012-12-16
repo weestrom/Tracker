@@ -1,103 +1,86 @@
 #!/usr/bin/perl
-package BlogApp::Crankshaft;
+package App::Crankshaft;
 use base 'Mojolicious::Controller';
+use Data::UUID;
 
 sub frontpage {
 	my $self = shift;
 		
-		my $frontpage_rs = $self->app->schema->resultset('FrontPage');
-		my $blogname = $self->app->blogname;
-		my $username = $self->app->users->loggedinas($self) || '';
-		$self->render(frontpage_rs => $frontpage_rs, blogname => $blogname, 'username' => $username);
+		$self->render();
 
 }
 
-sub writepost {
+sub newinbound {
 	my $self = shift;
-	my $userid = $self->session->{'userid'} || '';
-	$self->redirect_to('/adminlogin') unless $userid;
-	my $schema = $self->app->schema;
-	my $author_rs = $schema->resultset('Author')->search({idauthors => $userid});
+	my $pagetext = '<form action="/submitinbound" method="POST">';
 	
-	
-	## TODO: Eventually move this off to a template
-	my $pagetext = '<form action="submitpost" method="POST">';
-	
-	$pagetext = $pagetext . 'Title: <input type="text" name="title" maxlength="45" size="45" /> <br />';
-	$pagetext = $pagetext . 'Body: <textarea name="text" rows="80" columns="40" ></textarea><br />';
+	$pagetext = $pagetext . '<table border="0">';
+	$pagetext = $pagetext . '<tr><td>Date<br />(yyyy-mm-dd)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(yyyy-mm-dd hh:mm)</td><td>Backhaul</td></tr>';
+	$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="6" size="6" value="' . $self->param('date') . '"/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value=""/></td></tr>';
+	$pagetext = $pagetext . '</table>';
 	$pagetext = $pagetext . '<input type="submit" value="Submit" />';
 	$pagetext = $pagetext . '</form>';
 	$self->render(text => $pagetext);
 
 }
 
-sub submitpost {
+sub submitinbound {
 	my $self = shift;
-	my $idauthors = $self->session->{'userid'} || '';
-	print $idauthors . '/n';
-	my $title = $self->param('title');
-	my $mytext = $self->param('text');
-	my $post_rs = $self->app->schema->resultset('Post');
-	my $post_url = $title;
-	
-	##########################################################
-	## This should be a configurable method with some logic ##
-	##########################################################
-	$post_url =~ tr/ /_/;
-	$post_url =~ tr/a-zA-Z0-9//c; 
-	my $post_suffix = 2;
-	my $previous_suffix = '';
-	while ($post_rs->find(
-	{
-		'posturl' => $post_url
-	})) {
-		if ($post_suffix == 2){
-			$post_url = $post_url . $post_suffix;
-		}
-		else {
-			$post_url =~ s/$previous_suffix$/$post_suffix/;
-		}
-		$previous_suffix = $post_suffix;
-		$post_suffix++;
-	}
-	##########################################################
-	## This should be a configurable method with some logic ##
-	##########################################################
-	
-		my $new_post = $post_rs->new({
-		'authors_idauthors' => $idauthors,
-		'text' => $mytext,
-		'title' => $title,
-		'posturl' => $post_url
+	my $haul_rs = $self->app->schema->resultset('Data');
+	my $ug = new Data::UUID;
+	my $appt = $self->param('appt');
+	$appt = $appt . ":00";
+	#TODO: validate date and appt fields and kick to edit if bad
+		my $new_haul = $haul_rs->new({
+		uuid => $ug->create_str(),
+		recdate => $self->param('date'),
+		tracnum => $self->param('tracnum'),
+		trlrnum => $self->param('trlrnum'),
+		driver => $self->param('driver'),
+		origin => $self->param('origin'),
+		destination => $self->param('destination'),
+		appt => $appt,
+		backhaul => $self->param('backhaul'),
+		direction => 'INBOUND',
+		
 	});
-	$new_post->insert;
-	$self->redirect_to('/')
+	$new_haul->insert;
+	$self->redirect_to('/inbound/' . $self->param('date'));
 	
 	
 }
 
-sub article {
+sub inbound {
 	my $self = shift;
-	my $post_rs = $self->app->schema->resultset('Post');
-	my $post_url = $self->param('urltitle');
-	my $blogname = $self->app->blogname;
-	my $username = $self->app->users->loggedinas($self) || '';
-	my $article_row = $post_rs->search(
-		{ 'posturl' => $post_url },
-		{ 'prefetch' => 'authors_idauthor' })->next || '';
-	if( $article_row	)
-	{
-		my $comments_rs = $self->app->schema->resultset('Comment')->search(
-		{ 'posts_idposts' => $article_row->idposts },
-		{ prefetch => 'commentors_idcommentor' });
-		my $commentname = $self->app->users->commentingas($self);
+	my $date = $self->param('date');
+	my $pagetext = '<form action="/inbound/" method="GET">Date:<input name="date" value="" type="text"><input type="submit"></form><br>';
+	$pagetext = $pagetext . '<table border="1">';
+	$pagetext = $pagetext . '<tr><td></td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
 	
-		$self->render(article_row => $article_row, comments_rs => $comments_rs, blogname => $blogname, commentorname => $commentname, username => $username );
-	}
-	else
+	my $inbound_rs = $self->app->schema->resultset('Inbound');
+	my $inbound_search = $inbound_rs->search( recdate => $date );
+	my $inbound_row;
+	while ( $inbound_row = $inbound_search->next || '')
 	{
-		$self->render();
+		$pagetext = $pagetext . '<tr><td><a href="' . $self->url_for('/edit/' . $inbound_row->uuid) . '">edit</a></td>';
+		$pagetext = $pagetext . '<td>' . $inbound_row->tracnum . '</td>';
+		$pagetext = $pagetext . '<td>' . $inbound_row->trlrnum . '</td>';
+		$pagetext = $pagetext . '<td>' . $inbound_row->driver . '</td>';
+		$pagetext = $pagetext . '<td>' . $inbound_row->origin . '</td>';
+		$pagetext = $pagetext . '<td>' . $inbound_row->destination . '</td>';
+		$pagetext = $pagetext . '<td>' . $inbound_row->appt . '</td>';
+		$pagetext = $pagetext . '<td>' . $inbound_row->backhaul . '</td></tr>';
 	}
+	$pagetext = $pagetext . '</table>';
+	
+	$self->render(text => $pagetext);
 }
 
 sub author {

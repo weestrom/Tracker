@@ -23,6 +23,12 @@ __PACKAGE__->table("outbound");
 
 =head1 ACCESSORS
 
+=head2 recdate
+
+  data_type: 'date'
+  datetime_undef_if_invalid: 1
+  is_nullable: 1
+
 =head2 tracnum
 
   data_type: 'integer'
@@ -66,6 +72,8 @@ __PACKAGE__->table("outbound");
 =cut
 
 __PACKAGE__->add_columns(
+  "recdate",
+  { data_type => "date", datetime_undef_if_invalid => 1, is_nullable => 1 },
   "tracnum",
   { data_type => "integer", is_nullable => 1 },
   "trlrnum",
@@ -87,8 +95,8 @@ __PACKAGE__->add_columns(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07033 @ 2012-12-15 16:27:01
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:KE0vcCS2KVCrlGyFNVfkRA
+# Created by DBIx::Class::Schema::Loader v0.07033 @ 2012-12-16 11:12:03
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:p5Ix1/4TvnjxUvRrOjhI+Q
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

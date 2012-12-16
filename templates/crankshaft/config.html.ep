@@ -1,10 +1,10 @@
 %layout 'standard';
  <% content 'header' => begin%>
-   <title><%= $blogname %> :: Config</title>
+   <title><%= 'Tracker' %> :: Config</title>
    
  <% end %>
    
-        <h1><%= link_to $blogname => '/' %></h1>
+        <h1><%= link_to 'Tracker' => '/' %></h1>
     	<form action="submitconfig" method="POST">
     	% my $sectionkey = '';
     	% my $sectionref = '';

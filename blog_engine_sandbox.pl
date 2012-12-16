@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 use lib "./lib";
-use BlogApp;
+use App;
 use strict;
 
-my $app = BlogApp->new;
+my $app = App->new;
 $app->start('daemon');
 
 while(1){}
