@@ -16,7 +16,7 @@ sub newinbound {
 	
 	$pagetext = $pagetext . '<table border="0">';
 	$pagetext = $pagetext . '<tr><td>Date<br />(yyyy-mm-dd)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(yyyy-mm-dd hh:mm)</td><td>Backhaul</td></tr>';
-	$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="6" size="6" value="' . $self->param('date') . '"/></td>';
+	$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="10" size="10" value="' . $self->param('date') . '"/></td>';
 	$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value=""/></td>';
 	$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value=""/></td>';
 	$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
@@ -37,7 +37,25 @@ sub submitinbound {
 	my $ug = new Data::UUID;
 	my $appt = $self->param('appt');
 	$appt = $appt . ":00";
-	#TODO: validate date and appt fields and kick to edit if bad
+	my $date = $self->param('date');
+	my @datelist = split ('-',$date);
+	my @numtest = @datelist;
+	my $numresult = 0;
+	foreach my $num (@numtest)
+	{
+		$num =~ s/[0-9]//g;
+		if (!($num eq ''))
+		{
+			$numresult = 1;
+		}
+	}
+	if (scalar(@datelist) != 3 || length($datelist[0]) != 4 || length($datelist[1]) != 2 || length($datelist[2]) != 2 || $numresult == 1)
+	{
+		$self->render(text => 'Invalid Date Format');
+		
+	}
+	else
+	{
 		my $new_haul = $haul_rs->new({
 		uuid => $ug->create_str(),
 		recdate => $self->param('date'),
@@ -50,9 +68,13 @@ sub submitinbound {
 		backhaul => $self->param('backhaul'),
 		direction => 'INBOUND',
 		
-	});
-	$new_haul->insert;
-	$self->redirect_to('/inbound/' . $self->param('date'));
+		});
+		$new_haul->insert;
+		$self->redirect_to('/inbound/' . $self->param('date'));
+	}
+	
+
+		
 	
 	
 }
@@ -60,7 +82,8 @@ sub submitinbound {
 sub inbound {
 	my $self = shift;
 	my $date = $self->param('date');
-	my $pagetext = '<form action="/inbound/" method="GET">Date:<input name="date" value="" type="text"><input type="submit"></form><br>';
+	my $pagetext = '<title> Tracker :: Inbound Loads </title> <header><h1>' . $date .  ' Inbound Loads</h1><br>';
+	$pagetext = $pagetext . '<form action="/inbound/" method="GET">Open Date:<input name="date" value="" type="text"><input type="submit"></form><br>';
 	$pagetext = $pagetext . '<table border="1">';
 	$pagetext = $pagetext . '<tr><td></td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
 	
@@ -78,9 +101,62 @@ sub inbound {
 		$pagetext = $pagetext . '<td>' . $inbound_row->appt . '</td>';
 		$pagetext = $pagetext . '<td>' . $inbound_row->backhaul . '</td></tr>';
 	}
-	$pagetext = $pagetext . '</table>';
+	$pagetext = $pagetext . '</table><br>';
+	$pagetext = $pagetext . '<a href="' . $self->url_for('/newinbound/' . $date) . '">New Load</a>';
 	
 	$self->render(text => $pagetext);
+}
+
+sub edit {
+	my $self = shift;
+	my $uuid = $self->param('uuid');
+	my $data_row = $self->app->schema->resultset('Data')->search({uuid => $uuid})->next || '';
+	if ($data_row)
+	{
+		my $pagetext = '<form action="uuidedit" method="POST"><input type="hidden" name="uuid" value="' . $uuid . '"/>';
+		$pagetext = $pagetext . '<input type="hidden" name="direction" value="' . $data_row->direction . '"/>';
+		$pagetext = $pagetext . '<table border="0">';
+		$pagetext = $pagetext . '<tr><td>Date<br />(yyyy-mm-dd)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(yyyy-mm-dd hh:mm)</td><td>Backhaul</td></tr>';
+		$pagetext = $pagetext . '<tr><td><input type="text" name="recdate" maxlength="10" size="10" value="' . $data_row->recdate . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value="' . $data_row->tracnum . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value="' . $data_row->trlrnum . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value="' . $data_row->driver . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value="' . $data_row->origin . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value="' . $data_row->destination . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="20" size="20" value="' . $data_row->appt . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value="' . $data_row->backhaul . '"/></td></tr>';
+		$pagetext = $pagetext . '</table>';
+		$pagetext = $pagetext . '<input type="submit" value="Submit" />';
+		$pagetext = $pagetext . '</form>';
+		$self->render(text => $pagetext);
+	}
+	else
+	{
+		$self->redirect_to('/');
+	}
+}
+
+sub uuidedit {
+	my $self = shift;
+	my $data_row = $self->app->schema->resultset('Data')->search({uuid => $self->param('uuid')})->next || '';
+	if ($data_row)
+	{
+		$data_row->update(
+		{
+			'recdate' => $self->param('recdate'),
+			'tracnum' => $self->param('tracnum'),
+			'trlrnum' => $self->param('trlrnum'),
+			'driver' => $self->param('driver'),
+			'origin' => $self->param('origin'),
+			'destination' => $self->param('destination'),
+			'appt' => $self->param('appt'),
+			'backhaul' => $self->param('backhaul')
+				
+		});
+	}
+	my $direction = $self->param('direction');
+	$direction =~ tr/A-Z/a-z/;
+	$self->redirect_to('/' . $direction . '/' . $self->param('recdate'));
 }
 
 sub author {

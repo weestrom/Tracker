@@ -365,3 +365,476 @@ Caused by: java.lang.ClassCastException: org.eclipse.egit.ui.internal.repository
 	at java.lang.reflect.Method.invoke(Method.java:597)
 	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
 	... 37 more
+
+!ENTRY org.eclipse.core.resources 4 566 2012-12-15 10:27:15.468
+!MESSAGE Could not save master table to file '/Users/eric/Tracker/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources'.
+!STACK 0
+java.io.FileNotFoundException: /Users/eric/Tracker/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:192)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:116)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1227)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1220)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1197)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 566 2012-12-15 10:27:26.767
+!MESSAGE Could not save master table to file '/Users/eric/Tracker/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources'.
+!STACK 0
+java.io.FileNotFoundException: /Users/eric/Tracker/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:192)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:116)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1227)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1220)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1197)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 566 2012-12-15 10:28:44.997
+!MESSAGE Could not save master table to file '/Users/eric/Tracker/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources.bak'.
+!STACK 0
+java.io.FileNotFoundException: /Users/eric/Tracker/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources.bak (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:192)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:116)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1227)
+	at org.eclipse.core.internal.resources.SaveManager.cleanMasterTable(SaveManager.java:228)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1138)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+!ENTRY org.eclipse.ui.ide 4 4 2012-12-15 10:28:46.987
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2012-12-15 10:28:46.987
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 566 2012-12-15 10:28:46.987
+!MESSAGE Could not save master table to file '/Users/eric/Tracker/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources'.
+!STACK 0
+java.io.FileNotFoundException: /Users/eric/Tracker/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:192)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:116)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1227)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1220)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1197)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2013-09-10 19:47:06.098 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-10 19:47:38.736
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2013-09-10 19:50:12.554 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-10 19:50:16.796
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2013-09-10 19:52:15.188 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-10 19:52:20.406
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2013-09-10 19:56:50.945 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-10 19:57:00.845
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2013-09-10 19:58:01.994 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-10 19:58:07.302
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.update.core 4 42 2013-09-10 20:10:54.026
+!MESSAGE Network connection problems encountered during search.
+!SUBENTRY 1 org.eclipse.update.core 4 0 2013-09-10 20:10:54.026
+!MESSAGE Unable to access "http://download.eclipse.org/egit/updates".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error parsing site stream. [Content is not allowed in prolog.]
+	at org.eclipse.update.core.Utilities.newCoreException(Utilities.java:223)
+	at org.eclipse.update.core.Utilities.newCoreException(Utilities.java:254)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:93)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+org.eclipse.core.runtime.CoreException[0]: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:1036)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.update.core.model.DefaultSiteParser.parse(DefaultSiteParser.java:152)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:81)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.update.core 4 0 2013-09-10 20:10:54.028
+!MESSAGE Error parsing site stream. [Content is not allowed in prolog.]
+!STACK 0
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:1036)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.update.core.model.DefaultSiteParser.parse(DefaultSiteParser.java:152)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:81)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.update.core 4 0 2013-09-10 20:10:54.028
+!MESSAGE Error parsing site stream. [Content is not allowed in prolog.]
+!STACK 0
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:1036)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.update.core.model.DefaultSiteParser.parse(DefaultSiteParser.java:152)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:81)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.update.core 4 42 2013-09-10 20:12:10.290
+!MESSAGE Network connection problems encountered during search.
+!SUBENTRY 1 org.eclipse.update.core 4 0 2013-09-10 20:12:10.291
+!MESSAGE Unable to access "http://download.eclipse.org/egit/updates".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error parsing site stream. [Content is not allowed in prolog.]
+	at org.eclipse.update.core.Utilities.newCoreException(Utilities.java:223)
+	at org.eclipse.update.core.Utilities.newCoreException(Utilities.java:254)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:93)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+org.eclipse.core.runtime.CoreException[0]: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:1036)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.update.core.model.DefaultSiteParser.parse(DefaultSiteParser.java:152)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:81)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.update.core 4 0 2013-09-10 20:12:10.291
+!MESSAGE Error parsing site stream. [Content is not allowed in prolog.]
+!STACK 0
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:1036)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.update.core.model.DefaultSiteParser.parse(DefaultSiteParser.java:152)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:81)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.update.core 4 0 2013-09-10 20:12:10.291
+!MESSAGE Error parsing site stream. [Content is not allowed in prolog.]
+!STACK 0
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:1036)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.update.core.model.DefaultSiteParser.parse(DefaultSiteParser.java:152)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:81)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.update.core 4 42 2013-09-10 20:19:31.279
+!MESSAGE Network connection problems encountered during search.
+!SUBENTRY 1 org.eclipse.update.core 4 0 2013-09-10 20:19:31.279
+!MESSAGE Unable to access "http://download.eclipse.org/releases/kepler".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error parsing site stream. [The XML stream is not a valid default "site.xml" file. The root tag is not site.]
+	at org.eclipse.update.core.Utilities.newCoreException(Utilities.java:223)
+	at org.eclipse.update.core.Utilities.newCoreException(Utilities.java:254)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:93)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+org.eclipse.core.runtime.CoreException[0]: org.xml.sax.SAXException: The XML stream is not a valid default "site.xml" file. The root tag is not site.
+	at org.eclipse.update.core.model.DefaultSiteParser.handleInitialState(DefaultSiteParser.java:391)
+	at org.eclipse.update.core.model.DefaultSiteParser.startElement(DefaultSiteParser.java:196)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:501)
+	at com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:767)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:626)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3104)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:921)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.update.core.model.DefaultSiteParser.parse(DefaultSiteParser.java:152)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:81)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.update.core 4 0 2013-09-10 20:19:31.280
+!MESSAGE Error parsing site stream. [The XML stream is not a valid default "site.xml" file. The root tag is not site.]
+!STACK 0
+org.xml.sax.SAXException: The XML stream is not a valid default "site.xml" file. The root tag is not site.
+	at org.eclipse.update.core.model.DefaultSiteParser.handleInitialState(DefaultSiteParser.java:391)
+	at org.eclipse.update.core.model.DefaultSiteParser.startElement(DefaultSiteParser.java:196)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:501)
+	at com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:767)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:626)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3104)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:921)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.update.core.model.DefaultSiteParser.parse(DefaultSiteParser.java:152)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:81)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.update.core 4 0 2013-09-10 20:19:31.280
+!MESSAGE Error parsing site stream. [The XML stream is not a valid default "site.xml" file. The root tag is not site.]
+!STACK 0
+org.xml.sax.SAXException: The XML stream is not a valid default "site.xml" file. The root tag is not site.
+	at org.eclipse.update.core.model.DefaultSiteParser.handleInitialState(DefaultSiteParser.java:391)
+	at org.eclipse.update.core.model.DefaultSiteParser.startElement(DefaultSiteParser.java:196)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:501)
+	at com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:767)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:626)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3104)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:921)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.update.core.model.DefaultSiteParser.parse(DefaultSiteParser.java:152)
+	at org.eclipse.update.core.model.SiteModelFactory.parseSite(SiteModelFactory.java:81)
+	at org.eclipse.update.internal.core.SiteURLFactory.createSite(SiteURLFactory.java:80)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:334)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:326)
+	at org.eclipse.update.internal.core.InternalSiteManager.createSite(InternalSiteManager.java:298)
+	at org.eclipse.update.internal.core.InternalSiteManager.attemptCreateSite(InternalSiteManager.java:222)
+	at org.eclipse.update.internal.core.InternalSiteManager.getSite(InternalSiteManager.java:162)
+	at org.eclipse.update.core.SiteManager.getSite(SiteManager.java:80)
+	at org.eclipse.update.search.UpdateSearchRequest.searchOneSite(UpdateSearchRequest.java:452)
+	at org.eclipse.update.search.UpdateSearchRequest.performSearch(UpdateSearchRequest.java:323)
+	at org.eclipse.update.ui.UpdateJob.runSearchForNew(UpdateJob.java:182)
+	at org.eclipse.update.ui.UpdateJob.run(UpdateJob.java:170)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

@@ -5,5 +5,3 @@ use strict;
 
 my $app = App->new;
 $app->start('daemon');
-
-while(1){}
