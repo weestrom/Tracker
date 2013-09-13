@@ -1,4 +1,0 @@
- <!doctype html><html>
-        <head><%= content 'header' %></head>
-        <body><%= content %></body>
- </html>

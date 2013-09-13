@@ -1,8 +1,0 @@
-<config>
-  <database heading="Database Settings">
-    <password prompt="Password" value="TR-tRa7pecR8" />
-    <schema prompt="Schema Name:" value="Tracker" />
-    <server prompt="Sever Name:" value="localhost" />
-    <user prompt="User Name:" value="root" />
-  </database>
-</config>
