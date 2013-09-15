@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="11" version="2.0">
+<workbench progressCount="12" version="2.0">
 <workbenchAdvisor/>
 <window height="870" width="849" x="-2" y="26">
 <fastViewData fastViewLocation="1024"/>
@@ -33,31 +33,21 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
-<part id="3"/>
-<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.epic.perleditor.editors.PerlEditor" name="App.pm" partName="App.pm" path="/Users/eric/Tracker/Tracker/lib/App.pm" title="App.pm" tooltip="Tracker/lib/App.pm" workbook="DefaultEditorWorkbook">
+<editor focus="true" id="org.epic.perleditor.editors.PerlEditor" name="App.pm" partName="App.pm" path="/Users/eric/Tracker/Tracker/lib/App.pm" title="App.pm" tooltip="Tracker/lib/App.pm" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/lib/App.pm"/>
-<editorState selectionHPixel="0" selectionLength="0" selectionOffset="413"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="0"/>
 </editor>
-<editor id="org.epic.perleditor.editors.PerlEditor" name="blog_engine_sandbox.pl" partName="blog_engine_sandbox.pl" path="/Users/eric/Tracker/Tracker/blog_engine_sandbox.pl" title="blog_engine_sandbox.pl" tooltip="Tracker/blog_engine_sandbox.pl" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/blog_engine_sandbox.pl"/>
-<editorState selectionHPixel="0" selectionLength="0" selectionOffset="362"/>
-</editor>
-<editor focus="true" id="org.epic.perleditor.editors.PerlEditor" name="Crankshaft.pm" partName="Crankshaft.pm" path="/Users/eric/Tracker/Tracker/lib/App/Crankshaft.pm" title="Crankshaft.pm" tooltip="Tracker/lib/App/Crankshaft.pm" workbook="DefaultEditorWorkbook">
+<editor id="org.epic.perleditor.editors.PerlEditor" name="Crankshaft.pm" partName="Crankshaft.pm" path="/Users/eric/Tracker/Tracker/lib/App/Crankshaft.pm" title="Crankshaft.pm" tooltip="Tracker/lib/App/Crankshaft.pm" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/lib/App/Crankshaft.pm"/>
-<editorState selectionHPixel="7" selectionLength="0" selectionOffset="440"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="0"/>
 </editor>
 <editor id="org.epic.perleditor.editors.PerlEditor" name="create_schema.pl" partName="create_schema.pl" path="/Users/eric/Tracker/Tracker/create_schema.pl" title="create_schema.pl" tooltip="Tracker/create_schema.pl" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/create_schema.pl"/>
 <editorState selectionHPixel="0" selectionLength="0" selectionOffset="17"/>
-</editor>
-<editor id="org.epic.perleditor.editors.PerlEditor" name="Crankshaft.pm" partName="Crankshaft.pm" path="/Users/eric/Tracker/Tracker/lib/App/Crankshaft.pm" title="Crankshaft.pm" tooltip="Tracker/lib/App/Crankshaft.pm" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/lib/App/Crankshaft.pm"/>
-<editorState selectionHPixel="0" selectionLength="0" selectionOffset="8367"/>
 </editor>
 </editors>
 <views>
@@ -65,9 +55,6 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" CommonNavigator.LINKING_ENABLED.delayed="0" org.eclipse.cdt.ui.cview.groupincludes="false" org.eclipse.cdt.ui.editor.CUChildren="true" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
 </view>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
-<view id="org.epic.perleditor.views.PerlDocView" partName="PerlDoc">
-<viewState/>
-</view>
 <view id="org.eclipse.ui.views.ResourceNavigator" partName="Navigator">
 <viewState LINK_NAVIGATOR_TO_EDITOR="0" sorter="1">
 <filters>
@@ -77,13 +64,14 @@
 </filters>
 <expanded>
 <element path="/Tracker"/>
-<element path="/Tracker/lib"/>
-<element path="/Tracker/lib/App"/>
 </expanded>
 <selection>
-<element path="/Tracker"/>
+<element path="/Tracker/.DS_Store"/>
 </selection>
 </viewState>
+</view>
+<view id="org.epic.perleditor.views.PerlDocView" partName="PerlDoc">
+<viewState/>
 </view>
 <view id="org.eclipse.cdt.make.ui.views.MakeView" partName="Make Targets"/>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
@@ -124,7 +112,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.epic.core.Perspective">
+<perspectives activePart="org.eclipse.ui.views.ResourceNavigator" activePerspective="org.epic.core.Perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -247,25 +235,18 @@
 <view id="org.eclipse.ui.views.TaskList"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.epic.perleditor.views.PerlDocView"/>
-<fastViewBars>
-<fastViewBar fastViewLocation="16384" id="bottomLeft" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
-<fastViews>
-<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
-<fastViewBar fastViewLocation="16384" id="topLeft" orientation="512" selectedTabId="org.eclipse.ui.views.ResourceNavigator" style="0">
-<fastViews>
-<view id="org.eclipse.ui.views.ResourceNavigator" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
-</fastViewBars>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.ui.views.ResourceNavigator"/>
+<fastViewBars/>
 <layout>
 <mainWindow>
 <info folder="true" part="topLeft">
-<folder appearance="2" expanded="0">
-<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<folder activePageID="org.eclipse.ui.views.ResourceNavigator" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ResourceNavigator" label="Navigator"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="topLeft">
@@ -291,9 +272,11 @@
 </folder>
 </info>
 <info folder="true" part="bottomLeft" ratio="0.4992722" ratioLeft="343" ratioRight="344" relationship="4" relative="topLeft">
-<folder appearance="2" expanded="0">
-<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33"/>
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 </mainWindow>
@@ -339,59 +322,43 @@
 <view id="org.eclipse.debug.ui.BreakpointView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
-<part id="0"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@17d7379" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@17d7379" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7496361" ratioLeft="515" ratioRight="172" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7496361" ratioLeft="515" ratioRight="172" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
-<part id="0"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">&#x0A;<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 </presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.4485437" ratioLeft="231" ratioRight="284" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
-<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.cdt.debug.ui.DisassemblyView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
-<part id="0"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="508" ratioRight="508" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="508" ratioRight="508" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.debug.ui.SignalsView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.debug.ui.ModulesView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">
-<part id="0"/>
+<presentation id="org.eclipse.ui.internal.presentations.r33.WorkbenchPresentationFactory_33">&#x0A;<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
@@ -405,40 +372,11 @@
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App/Crankshaft.pm"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/blog_engine_sandbox.pl"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App.pm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/blog_engine_sandbox.pl"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App.pm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Tracker/.DS_Store"/>
 </editors>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="4480" y="0"/>
-</item>
-<item historyLabel="blog_engine_sandbox.pl" index="1">
-<position info="not_deleted" x="362" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="4125" y="0"/>
-</item>
-<item historyLabel="blog_engine_sandbox.pl" index="1">
-<position info="not_deleted" x="362" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="12574" y="0"/>
-</item>
-<item historyLabel="blog_engine_sandbox.pl" index="1">
-<position info="not_deleted" x="461" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="12574" y="0"/>
-</item>
-<item historyLabel="blog_engine_sandbox.pl" index="1">
-<position info="not_deleted" x="362" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="3699" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="3718" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="3772" y="0"/>
-</item>
 <item historyLabel="Crankshaft.pm" index="0">
 <position info="not_deleted" x="3798" y="0"/>
 </item>
@@ -553,8 +491,41 @@
 <item historyLabel="Crankshaft.pm" index="0">
 <position info="not_deleted" x="8408" y="0"/>
 </item>
-<item active="true" historyLabel="Crankshaft.pm" index="0">
+<item historyLabel="Crankshaft.pm" index="0">
 <position info="not_deleted" x="7940" y="0"/>
+</item>
+<item historyLabel="App.pm" index="2">
+<position/>
+</item>
+<item historyLabel="blog_engine_sandbox.pl" index="3">
+<position/>
+</item>
+<item historyLabel="App.pm" index="2">
+<position/>
+</item>
+<item historyLabel="Crankshaft.pm" index="0">
+<position/>
+</item>
+<item historyLabel="blog_engine_sandbox.pl" index="3">
+<position/>
+</item>
+<item historyLabel="Crankshaft.pm" index="0">
+<position info="not_deleted" x="8367" y="0"/>
+</item>
+<item historyLabel="blog_engine_sandbox.pl" index="3">
+<position/>
+</item>
+<item historyLabel="Crankshaft.pm" index="0">
+<position/>
+</item>
+<item historyLabel="App.pm" index="4">
+<position/>
+</item>
+<item historyLabel=".DS_Store" index="5">
+<position/>
+</item>
+<item active="true" historyLabel="App.pm" index="4">
+<position/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -562,10 +533,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topLeft"/>
-<trimItem IMemento.internal.id="bottomLeft"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -577,6 +544,12 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name=".DS_Store" tooltip="Tracker/.DS_Store">
+<persistable path="/Tracker/.DS_Store"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" name="blog_engine_sandbox.pl" tooltip="Tracker/blog_engine_sandbox.pl">
+<persistable path="/Tracker/blog_engine_sandbox.pl"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" name="Crankshaft.pm" tooltip="Tracker/lib/App/Crankshaft.pm">
 <persistable path="/Tracker/lib/App/Crankshaft.pm"/>
 </file>
@@ -606,9 +579,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="mysqldroot" tooltip="Tracker/mysqldroot">
 <persistable path="/Tracker/mysqldroot"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" name="blog_engine_sandbox.pl" tooltip="Tracker/blog_engine_sandbox.pl">
-<persistable path="/Tracker/blog_engine_sandbox.pl"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" name="myapp.pl" tooltip="Tracker/liteapp/myapp.pl">
 <persistable path="/Tracker/liteapp/myapp.pl"/>

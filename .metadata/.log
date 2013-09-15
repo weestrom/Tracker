@@ -1248,3 +1248,226 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 !MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-15 12:51:04.785
 !MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SESSION 2013-09-15 14:28:51.829 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-15 14:28:56.979
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.resources 4 273 2013-09-15 14:29:33.109
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2013-09-15 14:29:33.109
+!MESSAGE Could not delete '/Tracker/lib/App/Schema'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:223)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:351)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:782)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1659)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:700)
+	at org.eclipse.ui.ide.undo.WorkspaceUndoUtil.delete(WorkspaceUndoUtil.java:590)
+	at org.eclipse.ui.ide.undo.WorkspaceUndoUtil.delete(WorkspaceUndoUtil.java:172)
+	at org.eclipse.ui.ide.undo.AbstractResourcesOperation.delete(AbstractResourcesOperation.java:111)
+	at org.eclipse.ui.ide.undo.DeleteResourcesOperation.doExecute(DeleteResourcesOperation.java:67)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation$1.run(AbstractWorkspaceOperation.java:206)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1797)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:204)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(DefaultOperationHistory.java:511)
+	at org.eclipse.ui.actions.DeleteResourceAction$4.run(DeleteResourceAction.java:538)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2013-09-15 14:29:33.110
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 3 org.eclipse.core.resources 4 274 2013-09-15 14:29:33.110
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Data.pm'.
+!SUBENTRY 3 org.eclipse.core.resources 4 274 2013-09-15 14:29:33.110
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Inbound.pm'.
+!SUBENTRY 3 org.eclipse.core.resources 4 274 2013-09-15 14:29:33.110
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Outbound.pm'.
+!SUBENTRY 2 org.eclipse.core.resources 4 274 2013-09-15 14:29:33.110
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Data.pm'.
+!SUBENTRY 2 org.eclipse.core.resources 4 274 2013-09-15 14:29:33.110
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Inbound.pm'.
+!SUBENTRY 2 org.eclipse.core.resources 4 274 2013-09-15 14:29:33.110
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Outbound.pm'.
+
+!ENTRY org.eclipse.core.resources 4 273 2013-09-15 14:29:54.682
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2013-09-15 14:29:54.682
+!MESSAGE Could not delete '/Tracker/lib/App/Schema'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:223)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:351)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:782)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1659)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:700)
+	at org.eclipse.ui.ide.undo.WorkspaceUndoUtil.delete(WorkspaceUndoUtil.java:590)
+	at org.eclipse.ui.ide.undo.WorkspaceUndoUtil.delete(WorkspaceUndoUtil.java:172)
+	at org.eclipse.ui.ide.undo.AbstractResourcesOperation.delete(AbstractResourcesOperation.java:111)
+	at org.eclipse.ui.ide.undo.DeleteResourcesOperation.doExecute(DeleteResourcesOperation.java:67)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation$1.run(AbstractWorkspaceOperation.java:206)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1797)
+	at org.eclipse.ui.ide.undo.AbstractWorkspaceOperation.execute(AbstractWorkspaceOperation.java:204)
+	at org.eclipse.core.commands.operations.DefaultOperationHistory.execute(DefaultOperationHistory.java:511)
+	at org.eclipse.ui.actions.DeleteResourceAction$4.run(DeleteResourceAction.java:538)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2013-09-15 14:29:54.683
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 3 org.eclipse.core.resources 4 274 2013-09-15 14:29:54.683
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Data.pm'.
+!SUBENTRY 3 org.eclipse.core.resources 4 274 2013-09-15 14:29:54.683
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Inbound.pm'.
+!SUBENTRY 3 org.eclipse.core.resources 4 274 2013-09-15 14:29:54.683
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Outbound.pm'.
+!SUBENTRY 2 org.eclipse.core.resources 4 274 2013-09-15 14:29:54.683
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Data.pm'.
+!SUBENTRY 2 org.eclipse.core.resources 4 274 2013-09-15 14:29:54.683
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Inbound.pm'.
+!SUBENTRY 2 org.eclipse.core.resources 4 274 2013-09-15 14:29:54.683
+!MESSAGE Resource is out of sync with the file system: '/Tracker/lib/App/Schema/Result/Outbound.pm'.
+
+!ENTRY org.eclipse.ui.workbench 4 0 2013-09-15 14:31:16.715
+!MESSAGE WARNING: Prevented recursive attempt to activate part org.eclipse.ui.views.ResourceNavigator while still in the middle of activating part org.epic.perleditor.editors.PerlEditor
+!STACK 0
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.ui.views.ResourceNavigator while still in the middle of activating part org.epic.perleditor.editors.PerlEditor
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3352)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:2946)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:265)
+	at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:229)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1500)
+	at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1282)
+	at org.eclipse.swt.widgets.Control.sendFocusEvent(Control.java:2696)
+	at org.eclipse.swt.widgets.Control.forceFocus(Control.java:986)
+	at org.eclipse.swt.widgets.Decorations.restoreFocus(Decorations.java:412)
+	at org.eclipse.swt.widgets.Shell.kEventWindowActivated(Shell.java:902)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1961)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4007)
+	at org.eclipse.swt.internal.carbon.OS.DisposeWindow(Native Method)
+	at org.eclipse.swt.widgets.Shell.destroyWidget(Shell.java:582)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:1375)
+	at org.eclipse.swt.widgets.Widget.dispose(Widget.java:661)
+	at org.eclipse.jface.window.Window.close(Window.java:330)
+	at org.eclipse.jface.dialogs.Dialog.close(Dialog.java:973)
+	at org.eclipse.jface.dialogs.MessageDialog.buttonPressed(MessageDialog.java:167)
+	at org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Dialog.java:618)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:227)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2950)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:820)
+	at org.eclipse.jface.window.Window.open(Window.java:796)
+	at org.eclipse.jface.dialogs.MessageDialog.openQuestion(MessageDialog.java:371)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.handleEditorInputChanged(AbstractTextEditor.java:4444)
+	at org.eclipse.ui.texteditor.StatusTextEditor.handleEditorInputChanged(StatusTextEditor.java:220)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.sanityCheckState(AbstractTextEditor.java:4574)
+	at org.eclipse.ui.texteditor.StatusTextEditor.sanityCheckState(StatusTextEditor.java:210)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.safelySanityCheckState(AbstractTextEditor.java:4552)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$ActivationListener.handleActivation(AbstractTextEditor.java:923)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$ActivationListener.partActivated(AbstractTextEditor.java:881)
+	at org.eclipse.ui.internal.PartListenerList$1.run(PartListenerList.java:72)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:857)
+	at org.eclipse.ui.internal.PartListenerList.fireEvent(PartListenerList.java:57)
+	at org.eclipse.ui.internal.PartListenerList.firePartActivated(PartListenerList.java:70)
+	at org.eclipse.ui.internal.PartService.firePartActivated(PartService.java:73)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:171)
+	at org.eclipse.ui.internal.WWinPartService.updateActivePart(WWinPartService.java:124)
+	at org.eclipse.ui.internal.WWinPartService.access$0(WWinPartService.java:115)
+	at org.eclipse.ui.internal.WWinPartService$1.partDeactivated(WWinPartService.java:48)
+	at org.eclipse.ui.internal.PartListenerList2$4.run(PartListenerList2.java:113)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:857)
+	at org.eclipse.ui.internal.PartListenerList2.fireEvent(PartListenerList2.java:53)
+	at org.eclipse.ui.internal.PartListenerList2.firePartDeactivated(PartListenerList2.java:111)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:116)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:165)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:56)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:126)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3402)
+	at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:611)
+	at org.eclipse.ui.internal.WorkbenchPage.showEditor(WorkbenchPage.java:2822)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2728)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2651)
+	at org.eclipse.ui.internal.WorkbenchPage.access$13(WorkbenchPage.java:2643)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2595)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2590)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2574)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2565)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:644)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:603)
+	at org.eclipse.ui.actions.OpenFileAction.openFile(OpenFileAction.java:98)
+	at org.eclipse.ui.actions.OpenSystemEditorAction.run(OpenSystemEditorAction.java:98)
+	at org.eclipse.ui.views.navigator.OpenActionGroup.runDefaultAction(OpenActionGroup.java:125)
+	at org.eclipse.ui.views.navigator.MainActionGroup.runDefaultAction(MainActionGroup.java:328)
+	at org.eclipse.ui.views.navigator.ResourceNavigator.handleOpen(ResourceNavigator.java:690)
+	at org.eclipse.ui.views.navigator.ResourceNavigator$6.open(ResourceNavigator.java:433)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:820)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:857)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:46)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:199)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:818)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1079)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1183)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:263)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:257)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:297)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2758)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.CallNextEventHandler(Native Method)
+	at org.eclipse.swt.widgets.Tree.kEventMouseDown(Tree.java:2363)
+	at org.eclipse.swt.widgets.Widget.mouseProc(Widget.java:1262)
+	at org.eclipse.swt.widgets.Display.mouseProc(Display.java:2815)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+!SESSION 2013-09-15 14:33:08.531 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-15 14:33:12.932
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
