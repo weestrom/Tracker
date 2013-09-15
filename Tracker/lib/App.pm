@@ -1,12 +1,17 @@
 #!/usr/bin/perl
+
+#######################################################################################
+#                 Copyright (c) 2013 Digitronix, Inc.                                 #
+#					 All rights reserved											  #
+#######################################################################################
+
+
 package App;
 use lib "../";
 use AppDB::Schema;
-use Digest::MD5;
 use XML::Simple;
 use base 'Mojolicious';
 
-__PACKAGE__->attr('digest');
 __PACKAGE__->attr('xml');
 __PACKAGE__->attr('config');
 __PACKAGE__->attr('schema');
@@ -16,7 +21,6 @@ __PACKAGE__->attr('dbtype' => 'mysql');
 
 sub startup {
 	my $self = shift;
-	$self->digest(Digest::MD5->new);
 	$self->xml(XML::Simple->new, KeyAttr => [], ForceArray => 1);
 	$self->config($self->xml->XMLin( $self->rootdir . 
 		'/etc/tracker/tracker.xml'));

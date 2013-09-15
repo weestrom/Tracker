@@ -1,5 +1,10 @@
  #!/usr/bin/perl
  # in a script
+#######################################################################################
+#                 Copyright (c) 2013 Digitronix, Inc.                                 #
+#					 All rights reserved											  #
+#######################################################################################
+
   use DBIx::Class::Schema::Loader qw/ make_schema_at /;
   my $DB_Database="Tracker";
 	my $DB_Host="localhost";
