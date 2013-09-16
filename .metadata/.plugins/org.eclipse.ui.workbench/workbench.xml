@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="12" version="2.0">
 <workbenchAdvisor/>
-<window height="870" width="849" x="-2" y="26">
+<window height="874" width="1440" x="0" y="22">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -33,21 +33,26 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor focus="true" id="org.epic.perleditor.editors.PerlEditor" name="App.pm" partName="App.pm" path="/Users/eric/Tracker/Tracker/lib/App.pm" title="App.pm" tooltip="Tracker/lib/App.pm" workbook="DefaultEditorWorkbook">
+<editor id="org.epic.perleditor.editors.PerlEditor" name="App.pm" partName="App.pm" path="/Users/eric/Tracker/Tracker/lib/App.pm" title="App.pm" tooltip="Tracker/lib/App.pm" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/lib/App.pm"/>
 <editorState selectionHPixel="0" selectionLength="0" selectionOffset="0"/>
 </editor>
 <editor id="org.epic.perleditor.editors.PerlEditor" name="Crankshaft.pm" partName="Crankshaft.pm" path="/Users/eric/Tracker/Tracker/lib/App/Crankshaft.pm" title="Crankshaft.pm" tooltip="Tracker/lib/App/Crankshaft.pm" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/lib/App/Crankshaft.pm"/>
-<editorState selectionHPixel="0" selectionLength="0" selectionOffset="0"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="10832"/>
 </editor>
 <editor id="org.epic.perleditor.editors.PerlEditor" name="create_schema.pl" partName="create_schema.pl" path="/Users/eric/Tracker/Tracker/create_schema.pl" title="create_schema.pl" tooltip="Tracker/create_schema.pl" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/create_schema.pl"/>
 <editorState selectionHPixel="0" selectionLength="0" selectionOffset="17"/>
+</editor>
+<editor activePart="true" focus="true" id="org.epic.perleditor.editors.PerlEditor" name="Tracker.pl" partName="Tracker.pl" path="/Users/eric/Tracker/Tracker/Tracker.pl" title="Tracker.pl" tooltip="Tracker/Tracker.pl" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/Tracker.pl"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="0"/>
 </editor>
 </editors>
 <views>
@@ -66,7 +71,7 @@
 <element path="/Tracker"/>
 </expanded>
 <selection>
-<element path="/Tracker/.DS_Store"/>
+<element path="/Tracker/Tracker.pl"/>
 </selection>
 </viewState>
 </view>
@@ -112,7 +117,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.views.ResourceNavigator" activePerspective="org.epic.core.Perspective">
+<perspectives activePart="org.epic.perleditor.editors.PerlEditor" activePerspective="org.epic.core.Perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -376,16 +381,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/blog_engine_sandbox.pl"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App.pm"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Tracker/.DS_Store"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App/Crankshaft.pm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/Tracker.pl"/>
 </editors>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="3798" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="3867" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="4862" y="0"/>
-</item>
 <item historyLabel="Crankshaft.pm" index="0">
 <position info="not_deleted" x="13174" y="0"/>
 </item>
@@ -524,7 +522,16 @@
 <item historyLabel=".DS_Store" index="5">
 <position/>
 </item>
-<item active="true" historyLabel="App.pm" index="4">
+<item historyLabel="App.pm" index="4">
+<position/>
+</item>
+<item historyLabel="Crankshaft.pm" index="6">
+<position info="not_deleted" x="6399" y="110"/>
+</item>
+<item historyLabel="Crankshaft.pm" index="6">
+<position info="not_deleted" x="10832" y="0"/>
+</item>
+<item active="true" historyLabel="Tracker.pl" index="7">
 <position/>
 </item>
 </navigationHistory>
@@ -544,6 +551,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" name="Tracker.pl" tooltip="Tracker/Tracker.pl">
+<persistable path="/Tracker/Tracker.pl"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name=".DS_Store" tooltip="Tracker/.DS_Store">
 <persistable path="/Tracker/.DS_Store"/>
 </file>

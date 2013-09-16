@@ -267,8 +267,8 @@ sub outbound {
 			$pagetext = $pagetext . '<td>' . $outbound_row->backhaul . '</td></tr>';
 		}
 		$pagetext = $pagetext . '</table><br>';
-		$pagetext = $pagetext . '<a href="' . $self->url_for('/newoutbound/' . $date) . '">New Load</a><br>';
-		$pagetext = $pagetext . '<a href="' . $self->url_for('/inbound/' . $date) . '">Go To Inbound Loads</a><br>';
+		$pagetext = $pagetext . '<a href="' . $self->url_for('/newoutbound/' . $date) . '">New Load</a>';
+		
 		$self->render(text => $pagetext);
 		
 	}
