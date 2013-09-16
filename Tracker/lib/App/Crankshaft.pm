@@ -32,12 +32,7 @@ sub datehandler {
 		$datestring = $datestring.$year;
 		@datelist = split("",$datestring);
 	}
-	if (scalar(@datelist) == 8)
-	{
-		return $datestring;
-	}
-	
-	
+
 	if (scalar(@datelist) != 6)
 	{
 		return '';
