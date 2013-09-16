@@ -156,7 +156,7 @@ sub inbound {
 		$pagetext = $pagetext . '<tr><td></td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
 		
 		my $inbound_rs = $self->app->schema->resultset('Inbound');
-		my $inbound_search = $inbound_rs->search({recdate => $dbdate});
+		my $inbound_search = $inbound_rs->search( recdate => $dbdate );
 		my $inbound_row;
 		while ( $inbound_row = $inbound_search->next || '')
 		{
@@ -252,7 +252,7 @@ sub outbound {
 		$pagetext = $pagetext . '<tr><td></td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
 		
 		my $outbound_rs = $self->app->schema->resultset('Outbound');
-		my $outbound_search = $outbound_rs->search({recdate => $dbdate});
+		my $outbound_search = $outbound_rs->search( recdate => $dbdate );
 		my $outbound_row;
 		while ( $outbound_row = $outbound_search->next || '')
 		{

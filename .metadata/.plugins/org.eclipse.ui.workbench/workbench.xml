@@ -42,17 +42,17 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/lib/App.pm"/>
 <editorState selectionHPixel="0" selectionLength="0" selectionOffset="0"/>
 </editor>
-<editor id="org.epic.perleditor.editors.PerlEditor" name="Crankshaft.pm" partName="Crankshaft.pm" path="/Users/eric/Tracker/Tracker/lib/App/Crankshaft.pm" title="Crankshaft.pm" tooltip="Tracker/lib/App/Crankshaft.pm" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/lib/App/Crankshaft.pm"/>
-<editorState selectionHPixel="0" selectionLength="0" selectionOffset="10832"/>
-</editor>
 <editor id="org.epic.perleditor.editors.PerlEditor" name="create_schema.pl" partName="create_schema.pl" path="/Users/eric/Tracker/Tracker/create_schema.pl" title="create_schema.pl" tooltip="Tracker/create_schema.pl" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/create_schema.pl"/>
 <editorState selectionHPixel="0" selectionLength="0" selectionOffset="17"/>
 </editor>
-<editor activePart="true" focus="true" id="org.epic.perleditor.editors.PerlEditor" name="Tracker.pl" partName="Tracker.pl" path="/Users/eric/Tracker/Tracker/Tracker.pl" title="Tracker.pl" tooltip="Tracker/Tracker.pl" workbook="DefaultEditorWorkbook">
+<editor id="org.epic.perleditor.editors.PerlEditor" name="Tracker.pl" partName="Tracker.pl" path="/Users/eric/Tracker/Tracker/Tracker.pl" title="Tracker.pl" tooltip="Tracker/Tracker.pl" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/Tracker.pl"/>
 <editorState selectionHPixel="0" selectionLength="0" selectionOffset="0"/>
+</editor>
+<editor focus="true" id="org.epic.perleditor.editors.PerlEditor" name="Crankshaft.pm" partName="Crankshaft.pm" path="/Users/eric/Tracker/Tracker/lib/App/Crankshaft.pm" title="Crankshaft.pm" tooltip="Tracker/lib/App/Crankshaft.pm" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/lib/App/Crankshaft.pm"/>
+<editorState selectionHPixel="0" selectionLength="7" selectionOffset="5385"/>
 </editor>
 </editors>
 <views>
@@ -69,9 +69,11 @@
 </filters>
 <expanded>
 <element path="/Tracker"/>
+<element path="/Tracker/lib"/>
+<element path="/Tracker/lib/App"/>
 </expanded>
 <selection>
-<element path="/Tracker/Tracker.pl"/>
+<element path="/Tracker/lib"/>
 </selection>
 </viewState>
 </view>
@@ -117,7 +119,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.epic.perleditor.editors.PerlEditor" activePerspective="org.epic.core.Perspective">
+<perspectives activePart="org.eclipse.ui.views.ResourceNavigator" activePerspective="org.epic.core.Perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -383,34 +385,11 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Tracker/.DS_Store"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App/Crankshaft.pm"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/Tracker.pl"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App/Crankshaft.pm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/create_schema.pl"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App.pm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App/Crankshaft.pm"/>
 </editors>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="13174" y="0"/>
-</item>
-<item historyLabel="blog_engine_sandbox.pl" index="1">
-<position info="not_deleted" x="362" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="4629" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="922" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="941" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="966" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="997" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="1038" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="1070" y="0"/>
-</item>
 <item historyLabel="Crankshaft.pm" index="0">
 <position info="not_deleted" x="1192" y="0"/>
 </item>
@@ -531,7 +510,34 @@
 <item historyLabel="Crankshaft.pm" index="6">
 <position info="not_deleted" x="10832" y="0"/>
 </item>
-<item active="true" historyLabel="Tracker.pl" index="7">
+<item historyLabel="Tracker.pl" index="7">
+<position/>
+</item>
+<item historyLabel="Crankshaft.pm" index="8">
+<position info="not_deleted" x="10832" y="0"/>
+</item>
+<item historyLabel="create_schema.pl" index="9">
+<position info="not_deleted" x="17" y="0"/>
+</item>
+<item historyLabel="Crankshaft.pm" index="8">
+<position info="not_deleted" x="5451" y="0"/>
+</item>
+<item historyLabel="create_schema.pl" index="9">
+<position info="not_deleted" x="17" y="0"/>
+</item>
+<item historyLabel="Crankshaft.pm" index="8">
+<position info="not_deleted" x="5451" y="0"/>
+</item>
+<item historyLabel="create_schema.pl" index="9">
+<position info="not_deleted" x="17" y="0"/>
+</item>
+<item historyLabel="Crankshaft.pm" index="8">
+<position/>
+</item>
+<item historyLabel="App.pm" index="10">
+<position/>
+</item>
+<item active="true" historyLabel="Crankshaft.pm" index="11">
 <position/>
 </item>
 </navigationHistory>
@@ -551,6 +557,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" name="Crankshaft.pm" tooltip="Tracker/lib/App/Crankshaft.pm">
+<persistable path="/Tracker/lib/App/Crankshaft.pm"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" name="Tracker.pl" tooltip="Tracker/Tracker.pl">
 <persistable path="/Tracker/Tracker.pl"/>
 </file>
@@ -559,9 +568,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" name="blog_engine_sandbox.pl" tooltip="Tracker/blog_engine_sandbox.pl">
 <persistable path="/Tracker/blog_engine_sandbox.pl"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" name="Crankshaft.pm" tooltip="Tracker/lib/App/Crankshaft.pm">
-<persistable path="/Tracker/lib/App/Crankshaft.pm"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" name="create_schema.pl" tooltip="Tracker/create_schema.pl">
 <persistable path="/Tracker/create_schema.pl"/>

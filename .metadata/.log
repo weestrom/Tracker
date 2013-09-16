@@ -1481,3 +1481,47 @@ Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.e
 
 !ENTRY org.eclipse.core.net 1 0 2013-09-16 07:39:59.418
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2013-09-16 07:49:29.583 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-16 07:49:34.783
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.osgi 2 1 2013-09-16 07:50:30.680
+!MESSAGE NLS unused message: codeAssist in: org.epic.perleditor.preferences.PreferencesMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-09-16 07:50:30.681
+!MESSAGE NLS unused message: matchingBracketsHighlightColor2 in: org.epic.perleditor.preferences.PreferencesMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-09-16 07:50:30.681
+!MESSAGE NLS unused message: findScopeColor2 in: org.epic.perleditor.preferences.PreferencesMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-09-16 07:50:30.681
+!MESSAGE NLS unused message: linkedPositionColor2 in: org.epic.perleditor.preferences.PreferencesMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-09-16 07:50:30.682
+!MESSAGE NLS unused message: linkColor2 in: org.epic.perleditor.preferences.PreferencesMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-09-16 07:50:30.682
+!MESSAGE NLS unused message: synchronizeOnCursor in: org.epic.perleditor.preferences.PreferencesMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-09-16 07:50:30.682
+!MESSAGE NLS missing message: outlineModuleFolding in: org.epic.perleditor.preferences.PreferencesMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-09-16 07:50:30.683
+!MESSAGE NLS missing message: outlineSorting in: org.epic.perleditor.preferences.PreferencesMessages
+!SESSION 2013-09-16 07:52:01.363 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-16 07:52:05.959
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
