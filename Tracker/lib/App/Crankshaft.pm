@@ -89,6 +89,10 @@ sub submitinbound {
 	my $ug = new Data::UUID;
 	my $appt = $self->param('appt');
 	my @apptsplit = split(' ',$appt);
+	if (scalar(@apptsplit) == 0)
+		{
+			@apptsplit = ( "000000", "00:00");
+		}
 	$appt = $self->datehandler($apptsplit[0]) . ' '  . $apptsplit[1];
 	my $date = $self->param('date');
 	my $dbdate = $self->datehandler($date);
@@ -145,7 +149,7 @@ sub inbound {
 		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value=""/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value="000000 00:00"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value=""/></td></tr>';
 		$pagetext = $pagetext . '</table>';
 		$pagetext = $pagetext . '<input type="submit" value="Submit" />';
@@ -183,6 +187,10 @@ sub submitoutbound {
 	my $ug = new Data::UUID;
 	my $appt = $self->param('appt');
 	my @apptsplit = split(' ',$appt);
+	if (scalar(@apptsplit) == 0)
+		{
+			@apptsplit = ( "000000", "00:00");
+		}
 	$appt = $self->datehandler($apptsplit[0]) . ' '  . $apptsplit[1];
 	my $date = $self->param('date');
 	my $dbdate = $self->datehandler($date);
@@ -231,14 +239,14 @@ sub outbound {
 		$pagetext = $pagetext . '<form action="/submitoutbound" method="POST">';
 		
 		$pagetext = $pagetext . '<table border="0">';
-		$pagetext = $pagetext . '<tr><td>Date<br />(yyyy-mm-dd)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(yyyy-mm-dd hh:mm)</td><td>Backhaul</td></tr>';
+		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
 		$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="10" size="10" value="' . $displaydate . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value=""/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value="000000 00:00"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value=""/></td></tr>';
 		$pagetext = $pagetext . '</table>';
 		$pagetext = $pagetext . '<input type="submit" value="Submit" />';
@@ -305,6 +313,10 @@ sub uuidedit {
 	if ($data_row)
 	{
 		my @apptsplit = split(' ',$self->param('appt'));
+		if (scalar(@apptsplit) == 0)
+		{
+			@apptsplit = ( "000000", "00:00");
+		}
 		$data_row->update(
 		{
 			'recdate' => $self->datehandler($self->param('recdate')),

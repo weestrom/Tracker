@@ -1535,3 +1535,145 @@ Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.e
 
 !ENTRY org.eclipse.core.net 1 0 2013-09-18 10:40:05.978
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2013-09-18 16:31:11.949 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-18 16:31:30.551
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.epic.perleditor 4 0 2013-09-18 16:53:56.677
+!MESSAGE An unexpected exception occurred while creating a link to /Library/Perl/5.12/Mojolicious/Routes.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.DebugModelPresentation.getEditorInput(DebugModelPresentation.java:160)
+	at org.eclipse.debug.internal.ui.LazyModelPresentation.getEditorInput(LazyModelPresentation.java:212)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupFacility.lookup(SourceLookupFacility.java:174)
+	at org.eclipse.debug.ui.DebugUITools.lookupSource(DebugUITools.java:749)
+	at org.eclipse.debug.internal.ui.elements.adapters.StackFrameSourceDisplayAdapter$SourceLookupJob.run(StackFrameSourceDisplayAdapter.java:118)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:53:56.677
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:53:56.677
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.epic.perleditor 4 0 2013-09-18 16:53:56.702
+!MESSAGE An unexpected exception occurred while creating a link to /Library/Perl/5.12/Mojolicious/Routes.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.DebugModelPresentation.getEditorInput(DebugModelPresentation.java:160)
+	at org.eclipse.debug.internal.ui.LazyModelPresentation.getEditorInput(LazyModelPresentation.java:212)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupFacility.lookup(SourceLookupFacility.java:174)
+	at org.eclipse.debug.ui.DebugUITools.lookupSource(DebugUITools.java:749)
+	at org.eclipse.debug.internal.ui.elements.adapters.StackFrameSourceDisplayAdapter$SourceLookupJob.run(StackFrameSourceDisplayAdapter.java:118)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:53:56.702
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:53:56.702
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.epic.perleditor 4 0 2013-09-18 16:54:03.408
+!MESSAGE An unexpected exception occurred while creating a link to /Library/Perl/5.12/Mojolicious/Routes.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.DebugModelPresentation.getEditorInput(DebugModelPresentation.java:160)
+	at org.eclipse.debug.internal.ui.LazyModelPresentation.getEditorInput(LazyModelPresentation.java:212)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupFacility.lookup(SourceLookupFacility.java:174)
+	at org.eclipse.debug.ui.DebugUITools.lookupSource(DebugUITools.java:749)
+	at org.eclipse.debug.internal.ui.elements.adapters.StackFrameSourceDisplayAdapter$SourceLookupJob.run(StackFrameSourceDisplayAdapter.java:118)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:54:03.409
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:54:03.409
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.epic.perleditor 4 0 2013-09-18 16:54:03.424
+!MESSAGE An unexpected exception occurred while creating a link to /Library/Perl/5.12/Mojolicious/Routes.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.DebugModelPresentation.getEditorInput(DebugModelPresentation.java:160)
+	at org.eclipse.debug.internal.ui.LazyModelPresentation.getEditorInput(LazyModelPresentation.java:212)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupFacility.lookup(SourceLookupFacility.java:174)
+	at org.eclipse.debug.ui.DebugUITools.lookupSource(DebugUITools.java:749)
+	at org.eclipse.debug.internal.ui.elements.adapters.StackFrameSourceDisplayAdapter$SourceLookupJob.run(StackFrameSourceDisplayAdapter.java:118)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:54:03.425
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:54:03.425
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.epic.perleditor 4 0 2013-09-18 16:54:05.322
+!MESSAGE An unexpected exception occurred while creating a link to /Library/Perl/5.12/Mojolicious/Routes.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.DebugModelPresentation.getEditorInput(DebugModelPresentation.java:160)
+	at org.eclipse.debug.internal.ui.LazyModelPresentation.getEditorInput(LazyModelPresentation.java:212)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupFacility.lookup(SourceLookupFacility.java:174)
+	at org.eclipse.debug.ui.DebugUITools.lookupSource(DebugUITools.java:749)
+	at org.eclipse.debug.internal.ui.elements.adapters.StackFrameSourceDisplayAdapter$SourceLookupJob.run(StackFrameSourceDisplayAdapter.java:118)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:54:05.323
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:54:05.323
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.epic.perleditor 4 0 2013-09-18 16:54:05.339
+!MESSAGE An unexpected exception occurred while creating a link to /Library/Perl/5.12/Mojolicious/Routes.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.DebugModelPresentation.getEditorInput(DebugModelPresentation.java:160)
+	at org.eclipse.debug.internal.ui.LazyModelPresentation.getEditorInput(LazyModelPresentation.java:212)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupFacility.lookup(SourceLookupFacility.java:174)
+	at org.eclipse.debug.ui.DebugUITools.lookupSource(DebugUITools.java:749)
+	at org.eclipse.debug.internal.ui.elements.adapters.StackFrameSourceDisplayAdapter$SourceLookupJob.run(StackFrameSourceDisplayAdapter.java:118)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:54:05.339
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:54:05.339
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
