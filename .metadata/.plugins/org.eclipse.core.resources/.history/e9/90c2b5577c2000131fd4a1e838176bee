@@ -41,8 +41,10 @@ sub startup {
 	$r->route( '/outbound/')->to('crankshaft#outbound');
 	$r->route( '/inbound/*date')->to('crankshaft#inbound');
 	$r->route( '/outbound/*date')->to('crankshaft#outbound');
-	#$r->route( '/newinbound/submitinbound/')->to('crankshaft#submitinbound');
-	#$r->route( '/newoutbound/submitoutbound/')->to('crankshaft#submitoutbound');
+	$r->route( '/newinbound/submitinbound/')->to('crankshaft#submitinbound');
+	$r->route( '/newoutbound/submitoutbound/')->to('crankshaft#submitoutbound');
+	$r->route( '/newinbound/*date')->to('crankshaft#newinbound');
+	$r->route( '/newoutbound/*date')->to('crankshaft#newoutbound');
 	$r->route( '/submitinbound/')->to('crankshaft#submitinbound');
 	$r->route( '/submitoutbound/')->to('crankshaft#submitoutbound');
 	$r->route( '/edit/uuidedit')->to('crankshaft#uuidedit');

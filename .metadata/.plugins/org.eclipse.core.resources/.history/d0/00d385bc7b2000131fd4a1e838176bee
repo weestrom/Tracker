@@ -32,7 +32,12 @@ sub datehandler {
 		$datestring = $datestring.$year;
 		@datelist = split("",$datestring);
 	}
-
+	if (scalar(@datelist) == 8)
+	{
+		return $datestring;
+	}
+	
+	
 	if (scalar(@datelist) != 6)
 	{
 		return '';
@@ -177,6 +182,27 @@ sub inbound {
 	
 }
 
+sub newoutbound {
+	my $self = shift;
+	my $pagetext = '<form action="/submitoutbound" method="POST">';
+	
+	$pagetext = $pagetext . '<table border="0">';
+	$pagetext = $pagetext . '<tr><td>Date<br />(yyyy-mm-dd)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(yyyy-mm-dd hh:mm)</td><td>Backhaul</td></tr>';
+	$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="10" size="10" value="' . $self->param('date') . '"/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value=""/></td>';
+	$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value=""/></td></tr>';
+	$pagetext = $pagetext . '</table>';
+	$pagetext = $pagetext . '<input type="submit" value="Submit" />';
+	$pagetext = $pagetext . '</form>';
+	$self->render(text => $pagetext);
+
+}
+
 sub submitoutbound {
 	my $self = shift;
 	my $haul_rs = $self->app->schema->resultset('Data');
@@ -222,12 +248,11 @@ sub outbound {
 	{ 
 		$pagetext = $pagetext . substr(time2str(str2time($dbdate)),0,3) . '<br>';
 	}
-	$pagetext = $pagetext . '</h1><form action="/outbound/" method="GET">Open Date (MMDDYY):<input name="date" value="" type="text"><input type="submit"></form><br>';
+	$pagetext = $pagetext . '</h1><form action="/inbound/" method="GET">Open Date (MMDDYY):<input name="date" value="" type="text"><input type="submit"></form><br>';
 		
 	
 	if($self->datetest($dbdate))
 	{
-		$pagetext = $pagetext . 'New Load:';
 		$pagetext = $pagetext . '<form action="/submitoutbound" method="POST">';
 		
 		$pagetext = $pagetext . '<table border="0">';

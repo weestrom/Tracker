@@ -40,7 +40,7 @@
 </editorArea>
 <editor id="org.epic.perleditor.editors.PerlEditor" name="App.pm" partName="App.pm" path="/Users/eric/Tracker/Tracker/lib/App.pm" title="App.pm" tooltip="Tracker/lib/App.pm" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/lib/App.pm"/>
-<editorState selectionHPixel="0" selectionLength="0" selectionOffset="0"/>
+<editorState selectionHPixel="0" selectionLength="0" selectionOffset="1492"/>
 </editor>
 <editor id="org.epic.perleditor.editors.PerlEditor" name="create_schema.pl" partName="create_schema.pl" path="/Users/eric/Tracker/Tracker/create_schema.pl" title="create_schema.pl" tooltip="Tracker/create_schema.pl" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/create_schema.pl"/>
@@ -52,7 +52,7 @@
 </editor>
 <editor focus="true" id="org.epic.perleditor.editors.PerlEditor" name="Crankshaft.pm" partName="Crankshaft.pm" path="/Users/eric/Tracker/Tracker/lib/App/Crankshaft.pm" title="Crankshaft.pm" tooltip="Tracker/lib/App/Crankshaft.pm" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Tracker/lib/App/Crankshaft.pm"/>
-<editorState selectionHPixel="0" selectionLength="7" selectionOffset="5385"/>
+<editorState selectionHPixel="0" selectionLength="13" selectionOffset="2277"/>
 </editor>
 </editors>
 <views>
@@ -73,7 +73,7 @@
 <element path="/Tracker/lib/App"/>
 </expanded>
 <selection>
-<element path="/Tracker/lib"/>
+<element path="/Tracker/.git"/>
 </selection>
 </viewState>
 </view>
@@ -378,7 +378,6 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App/Crankshaft.pm"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/blog_engine_sandbox.pl"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App.pm"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/blog_engine_sandbox.pl"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App.pm"/>
@@ -389,52 +388,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/create_schema.pl"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App.pm"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App/Crankshaft.pm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/lib/App.pm"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.epic.perleditor.editors.PerlEditor" path="/Tracker/Tracker.pl"/>
 </editors>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="1192" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="1224" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="1259" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="5824" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="13174" y="0"/>
-</item>
-<item historyLabel="blog_engine_sandbox.pl" index="1">
-<position info="not_deleted" x="362" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="4629" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="5955" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="1013" y="5"/>
-</item>
-<item historyLabel="blog_engine_sandbox.pl" index="1">
-<position info="not_deleted" x="362" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="5955" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position/>
-</item>
-<item historyLabel="blog_engine_sandbox.pl" index="1">
-<position info="not_deleted" x="362" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="7940" y="0"/>
-</item>
-<item historyLabel="Crankshaft.pm" index="0">
-<position info="not_deleted" x="7959" y="0"/>
-</item>
 <item historyLabel="Crankshaft.pm" index="0">
 <position info="not_deleted" x="8013" y="0"/>
 </item>
@@ -471,74 +427,119 @@
 <item historyLabel="Crankshaft.pm" index="0">
 <position info="not_deleted" x="7940" y="0"/>
 </item>
-<item historyLabel="App.pm" index="2">
+<item historyLabel="App.pm" index="1">
 <position/>
 </item>
-<item historyLabel="blog_engine_sandbox.pl" index="3">
+<item historyLabel="blog_engine_sandbox.pl" index="2">
 <position/>
 </item>
-<item historyLabel="App.pm" index="2">
+<item historyLabel="App.pm" index="1">
 <position/>
 </item>
 <item historyLabel="Crankshaft.pm" index="0">
 <position/>
 </item>
-<item historyLabel="blog_engine_sandbox.pl" index="3">
+<item historyLabel="blog_engine_sandbox.pl" index="2">
 <position/>
 </item>
 <item historyLabel="Crankshaft.pm" index="0">
 <position info="not_deleted" x="8367" y="0"/>
 </item>
-<item historyLabel="blog_engine_sandbox.pl" index="3">
+<item historyLabel="blog_engine_sandbox.pl" index="2">
 <position/>
 </item>
 <item historyLabel="Crankshaft.pm" index="0">
 <position/>
 </item>
-<item historyLabel="App.pm" index="4">
+<item historyLabel="App.pm" index="3">
 <position/>
 </item>
-<item historyLabel=".DS_Store" index="5">
+<item historyLabel=".DS_Store" index="4">
 <position/>
 </item>
-<item historyLabel="App.pm" index="4">
+<item historyLabel="App.pm" index="3">
 <position/>
 </item>
-<item historyLabel="Crankshaft.pm" index="6">
+<item historyLabel="Crankshaft.pm" index="5">
 <position info="not_deleted" x="6399" y="110"/>
 </item>
-<item historyLabel="Crankshaft.pm" index="6">
+<item historyLabel="Crankshaft.pm" index="5">
 <position info="not_deleted" x="10832" y="0"/>
 </item>
-<item historyLabel="Tracker.pl" index="7">
+<item historyLabel="Tracker.pl" index="6">
 <position/>
 </item>
-<item historyLabel="Crankshaft.pm" index="8">
+<item historyLabel="Crankshaft.pm" index="7">
 <position info="not_deleted" x="10832" y="0"/>
 </item>
-<item historyLabel="create_schema.pl" index="9">
+<item historyLabel="create_schema.pl" index="8">
 <position info="not_deleted" x="17" y="0"/>
 </item>
-<item historyLabel="Crankshaft.pm" index="8">
+<item historyLabel="Crankshaft.pm" index="7">
 <position info="not_deleted" x="5451" y="0"/>
 </item>
-<item historyLabel="create_schema.pl" index="9">
+<item historyLabel="create_schema.pl" index="8">
 <position info="not_deleted" x="17" y="0"/>
 </item>
-<item historyLabel="Crankshaft.pm" index="8">
+<item historyLabel="Crankshaft.pm" index="7">
 <position info="not_deleted" x="5451" y="0"/>
 </item>
-<item historyLabel="create_schema.pl" index="9">
+<item historyLabel="create_schema.pl" index="8">
 <position info="not_deleted" x="17" y="0"/>
 </item>
-<item historyLabel="Crankshaft.pm" index="8">
+<item historyLabel="Crankshaft.pm" index="7">
 <position/>
 </item>
-<item historyLabel="App.pm" index="10">
+<item historyLabel="App.pm" index="9">
 <position/>
 </item>
-<item active="true" historyLabel="Crankshaft.pm" index="11">
+<item historyLabel="Crankshaft.pm" index="10">
 <position/>
+</item>
+<item historyLabel="App.pm" index="11">
+<position/>
+</item>
+<item historyLabel="Crankshaft.pm" index="10">
+<position/>
+</item>
+<item historyLabel="Tracker.pl" index="12">
+<position/>
+</item>
+<item historyLabel="Crankshaft.pm" index="10">
+<position info="not_deleted" x="2227" y="0"/>
+</item>
+<item historyLabel="Crankshaft.pm" index="10">
+<position/>
+</item>
+<item historyLabel="Crankshaft.pm" index="10">
+<position info="not_deleted" x="416" y="0"/>
+</item>
+<item historyLabel="Crankshaft.pm" index="10">
+<position info="not_deleted" x="7282" y="8"/>
+</item>
+<item historyLabel="Crankshaft.pm" index="10">
+<position info="not_deleted" x="7903" y="0"/>
+</item>
+<item historyLabel="Crankshaft.pm" index="10">
+<position/>
+</item>
+<item historyLabel="Crankshaft.pm" index="10">
+<position info="not_deleted" x="3160" y="7"/>
+</item>
+<item historyLabel="Crankshaft.pm" index="10">
+<position info="not_deleted" x="6392" y="0"/>
+</item>
+<item historyLabel="Tracker.pl" index="12">
+<position/>
+</item>
+<item historyLabel="App.pm" index="11">
+<position/>
+</item>
+<item historyLabel="Crankshaft.pm" index="10">
+<position info="not_deleted" x="6392" y="0"/>
+</item>
+<item active="true" historyLabel="Crankshaft.pm" index="10">
+<position info="not_deleted" x="2277" y="13"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
