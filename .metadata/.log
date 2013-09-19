@@ -1677,3 +1677,24 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 !MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-18 16:54:05.339
 !MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SESSION 2013-09-19 09:43:54.724 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-19 09:44:02.095
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-09-19 09:49:26.135
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-09-19 09:49:26.136
+!MESSAGE Conflict for 'org.epic.perleditor.commands.clearMarker':
+HandlerActivation(commandId=org.epic.perleditor.commands.clearMarker,
+	handler=ActionDelegateHandlerProxy(null,org.epic.perleditor.actions.DefaultRetargetEditorDelegate),
+	expression=AndExpression(ViewerContributionExpression(#PerlEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@1e88b35),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1e88b35)),sourcePriority=-2147467264)
+HandlerActivation(commandId=org.epic.perleditor.commands.clearMarker,
+	handler=ActionDelegateHandlerProxy(null,org.epic.perleditor.actions.DefaultRetargetEditorDelegate),
+	expression=AndExpression(ViewerContributionExpression(#PerlEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@1e88b35),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1e88b35)),sourcePriority=-2147467264)

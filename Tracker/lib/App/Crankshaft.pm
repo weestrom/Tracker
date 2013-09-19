@@ -82,18 +82,97 @@ sub datetest {
 	}
 }
 
+sub appthandler {
+	my $self = shift;
+	my $appt = shift;
+	
+	my @apptsplit = split(' ',$appt);
+	if (scalar(@apptsplit) == 0)
+	{
+		@apptsplit = ( "000000", "00:00");
+	}
+	
+	my $timetest = $apptsplit[1];
+	$timetest =~ s/[0-9]?[0-9]:[0-9][0-9]//g;
+	if (!($timetest eq ''))
+	{
+		@apptsplit = ( $apptsplit[0], "00:00");
+	}
+	
+	if ($self->datehandler($apptsplit[0]))
+	{
+		return $self->datehandler($apptsplit[0]) . ' ' . $apptsplit[1];
+	}
+	else
+	{
+		return '0000-00-00 ' . $apptsplit[1];
+	}	
+}
+
+sub newform {
+	
+	my $self = shift;
+	my $direction = shift;
+	my $displaydate = shift;
+	my $pagetext = shift;
+	
+	$pagetext = $pagetext . '<form action="/submit' . $direction . '" method="POST">';
+		$pagetext = $pagetext . 'New Load:';
+		$pagetext = $pagetext . '<table border="0">';
+		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
+		$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="10" size="10" value="' . $displaydate . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value=""/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value=""/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value="000000 00:00"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value=""/></td></tr>';
+		$pagetext = $pagetext . '</table>';
+		$pagetext = $pagetext . '<input type="submit" value="Submit" />';
+		$pagetext = $pagetext . '</form>';
+		
+		return $pagetext;
+		
+}
+
+sub resultstable {
+	
+	my $self = shift;
+	my $direction = shift;
+	my $dbdate = shift;
+	my $pagetext = shift;
+	
+	
+	$pagetext = $pagetext . '<table border="1">';
+	$pagetext = $pagetext . '<tr><td></td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
+	
+	my $rs = $self->app->schema->resultset($direction);
+	my $search = $rs->search({recdate => $dbdate});
+	my $row;
+	while ( $row = $search->next || '')
+	{
+		$pagetext = $pagetext . '<tr><td><a href="' . $self->url_for('/edit/' . $row->uuid) . '">edit</a></td>';
+		$pagetext = $pagetext . '<td>' . $row->tracnum . '</td>';
+		$pagetext = $pagetext . '<td>' . $row->trlrnum . '</td>';
+		$pagetext = $pagetext . '<td>' . $row->driver . '</td>';
+		$pagetext = $pagetext . '<td>' . $row->origin . '</td>';
+		$pagetext = $pagetext . '<td>' . $row->destination . '</td>';
+		my @apptsplit = split(' ',$row->appt);
+		$pagetext = $pagetext . '<td>' . $self->displaydate($apptsplit[0]) . ' ' . substr($apptsplit[1],0,5) . ' ' .substr(time2str(str2time($apptsplit[0])),0,3) . '</td>';
+		$pagetext = $pagetext . '<td>' . $row->backhaul . '</td></tr>';
+	}
+	$pagetext = $pagetext . '</table><br>';
+	
+	return $pagetext;
+}
 
 sub submitinbound {
 	my $self = shift;
 	my $haul_rs = $self->app->schema->resultset('Data');
 	my $ug = new Data::UUID;
-	my $appt = $self->param('appt');
-	my @apptsplit = split(' ',$appt);
-	if (scalar(@apptsplit) == 0)
-		{
-			@apptsplit = ( "000000", "00:00");
-		}
-	$appt = $self->datehandler($apptsplit[0]) . ' '  . $apptsplit[1];
+	my $dbappt = $self->appthandler($self->param('appt'));
+	
 	my $date = $self->param('date');
 	my $dbdate = $self->datehandler($date);
 	if ($self->datetest($dbdate))
@@ -106,7 +185,7 @@ sub submitinbound {
 		driver => $self->param('driver'),
 		origin => $self->param('origin'),
 		destination => $self->param('destination'),
-		appt => $appt,
+		appt => $dbappt,
 		backhaul => $self->param('backhaul'),
 		direction => 'INBOUND',
 		
@@ -138,43 +217,10 @@ sub inbound {
 	
 	if($self->datetest($dbdate))
 	{
-		$pagetext = $pagetext . '<form action="/submitinbound" method="POST">';
-	
-		$pagetext = $pagetext . 'New Load:';
-		$pagetext = $pagetext . '<table border="0">';
-		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
-		$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="10" size="10" value="' . $displaydate . '"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value="000000 00:00"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value=""/></td></tr>';
-		$pagetext = $pagetext . '</table>';
-		$pagetext = $pagetext . '<input type="submit" value="Submit" />';
-		$pagetext = $pagetext . '</form>';
 		
-		$pagetext = $pagetext . '<table border="1">';
-		$pagetext = $pagetext . '<tr><td></td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
-		
-		my $inbound_rs = $self->app->schema->resultset('Inbound');
-		my $inbound_search = $inbound_rs->search({recdate => $dbdate});
-		my $inbound_row;
-		while ( $inbound_row = $inbound_search->next || '')
-		{
-			$pagetext = $pagetext . '<tr><td><a href="' . $self->url_for('/edit/' . $inbound_row->uuid) . '">edit</a></td>';
-			$pagetext = $pagetext . '<td>' . $inbound_row->tracnum . '</td>';
-			$pagetext = $pagetext . '<td>' . $inbound_row->trlrnum . '</td>';
-			$pagetext = $pagetext . '<td>' . $inbound_row->driver . '</td>';
-			$pagetext = $pagetext . '<td>' . $inbound_row->origin . '</td>';
-			$pagetext = $pagetext . '<td>' . $inbound_row->destination . '</td>';
-			my @apptsplit = split(' ',$inbound_row->appt);
-			$pagetext = $pagetext . '<td>' . $self->displaydate($apptsplit[0]) . ' ' . substr($apptsplit[1],0,5) . ' ' .substr(time2str(str2time($apptsplit[0])),0,3) . '</td>';
-			$pagetext = $pagetext . '<td>' . $inbound_row->backhaul . '</td></tr>';
-		}
-		$pagetext = $pagetext . '</table><br>';
-		
+		$pagetext = $self->newform('inbound', $displaydate, $pagetext);
+		$pagetext = $self->resultstable('Inbound', $dbdate, $pagetext);
+			
 	}
 	$self->render(text => $pagetext);
 		
@@ -185,13 +231,7 @@ sub submitoutbound {
 	my $self = shift;
 	my $haul_rs = $self->app->schema->resultset('Data');
 	my $ug = new Data::UUID;
-	my $appt = $self->param('appt');
-	my @apptsplit = split(' ',$appt);
-	if (scalar(@apptsplit) == 0)
-		{
-			@apptsplit = ( "000000", "00:00");
-		}
-	$appt = $self->datehandler($apptsplit[0]) . ' '  . $apptsplit[1];
+	my $dbappt = $self->appthandler($self->param('appt'));
 	my $date = $self->param('date');
 	my $dbdate = $self->datehandler($date);
 	if ($self->datetest($dbdate))
@@ -204,7 +244,7 @@ sub submitoutbound {
 		driver => $self->param('driver'),
 		origin => $self->param('origin'),
 		destination => $self->param('destination'),
-		appt => $appt,
+		appt => $dbappt,
 		backhaul => $self->param('backhaul'),
 		direction => 'OUTBOUND',
 		
@@ -235,42 +275,8 @@ sub outbound {
 	
 	if($self->datetest($dbdate))
 	{
-		$pagetext = $pagetext . 'New Load:';
-		$pagetext = $pagetext . '<form action="/submitoutbound" method="POST">';
-		
-		$pagetext = $pagetext . '<table border="0">';
-		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
-		$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="10" size="10" value="' . $displaydate . '"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value="000000 00:00"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value=""/></td></tr>';
-		$pagetext = $pagetext . '</table>';
-		$pagetext = $pagetext . '<input type="submit" value="Submit" />';
-		$pagetext = $pagetext . '</form>';
-		
-		$pagetext = $pagetext . '<table border="1">';
-		$pagetext = $pagetext . '<tr><td></td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
-		
-		my $outbound_rs = $self->app->schema->resultset('Outbound');
-		my $outbound_search = $outbound_rs->search({recdate => $dbdate});
-		my $outbound_row;
-		while ( $outbound_row = $outbound_search->next || '')
-		{
-			$pagetext = $pagetext . '<tr><td><a href="' . $self->url_for('/edit/' . $outbound_row->uuid) . '">edit</a></td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->tracnum . '</td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->trlrnum . '</td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->driver . '</td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->origin . '</td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->destination . '</td>';
-			my @apptsplit = split(' ',$outbound_row->appt);
-			$pagetext = $pagetext . '<td>' . $self->displaydate($apptsplit[0]) . ' ' . substr($apptsplit[1],0,5) . ' ' .substr(time2str(str2time($apptsplit[0])),0,3) . '</td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->backhaul . '</td></tr>';
-		}
-		$pagetext = $pagetext . '</table><br>';
+		$pagetext = $self->newform('outbound', $displaydate, $pagetext);
+		$pagetext = $self->resultstable('Outbound', $dbdate, $pagetext);
 		
 	}
 	$self->render(text => $pagetext);
@@ -312,11 +318,6 @@ sub uuidedit {
 	my $data_row = $self->app->schema->resultset('Data')->search({uuid => $self->param('uuid')})->next || '';
 	if ($data_row)
 	{
-		my @apptsplit = split(' ',$self->param('appt'));
-		if (scalar(@apptsplit) == 0)
-		{
-			@apptsplit = ( "000000", "00:00");
-		}
 		$data_row->update(
 		{
 			'recdate' => $self->datehandler($self->param('recdate')),
@@ -325,7 +326,7 @@ sub uuidedit {
 			'driver' => $self->param('driver'),
 			'origin' => $self->param('origin'),
 			'destination' => $self->param('destination'),
-			'appt' => $self->datehandler($apptsplit[0]) . ' ' . $apptsplit[1],
+			'appt' => $self->appthandler($self->param('appt')),
 			'backhaul' => $self->param('backhaul')
 				
 		});

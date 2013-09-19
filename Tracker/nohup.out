@@ -1,0 +1,27 @@
+[Thu Sep 19 10:39:45 2013] [info] Listening at "http://*:3000".
+[Thu Sep 19 10:39:59 2013] [debug] Your secret passphrase needs to be changed!!!
+[Thu Sep 19 10:39:59 2013] [debug] GET /outbound/010313 (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.65 Safari/537.36).
+[Thu Sep 19 10:39:59 2013] [debug] Routing to controller "App::Crankshaft" and action "outbound".
+[Thu Sep 19 10:39:59 2013] [debug] 200 OK (0.054065s, 18.496/s).
+[Thu Sep 19 10:40:04 2013] [debug] GET /edit/076C4FF6-1E2F-11E3-B953-92F59FB83F3F (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.65 Safari/537.36).
+[Thu Sep 19 10:40:04 2013] [debug] Routing to controller "App::Crankshaft" and action "edit".
+[Thu Sep 19 10:40:04 2013] [debug] 200 OK (0.002428s, 411.862/s).
+[Thu Sep 19 10:40:53 2013] [debug] GET /outbound/010313 (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.65 Safari/537.36).
+[Thu Sep 19 10:40:53 2013] [debug] Routing to controller "App::Crankshaft" and action "outbound".
+[Thu Sep 19 10:40:53 2013] [debug] 200 OK (0.005531s, 180.799/s).
+[Thu Sep 19 10:40:57 2013] [debug] GET /edit/076C4FF6-1E2F-11E3-B953-92F59FB83F3F (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.65 Safari/537.36).
+[Thu Sep 19 10:40:57 2013] [debug] Routing to controller "App::Crankshaft" and action "edit".
+[Thu Sep 19 10:40:57 2013] [debug] 200 OK (0.002095s, 477.327/s).
+Server available at http://127.0.0.1:3000.
+[Thu Sep 19 10:49:15 2013] [info] Listening at "http://*:3000".
+[Thu Sep 19 10:49:18 2013] [debug] Your secret passphrase needs to be changed!!!
+[Thu Sep 19 10:49:18 2013] [debug] GET /outbound/010313 (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.65 Safari/537.36).
+[Thu Sep 19 10:49:18 2013] [debug] Routing to controller "App::Crankshaft" and action "outbound".
+[Thu Sep 19 10:49:18 2013] [debug] 200 OK (0.054442s, 18.368/s).
+[Thu Sep 19 10:49:26 2013] [debug] GET /outbound/010313 (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.65 Safari/537.36).
+[Thu Sep 19 10:49:26 2013] [debug] Routing to controller "App::Crankshaft" and action "outbound".
+[Thu Sep 19 10:49:26 2013] [debug] 200 OK (0.005132s, 194.856/s).
+[Thu Sep 19 10:49:30 2013] [debug] GET /edit/076C4FF6-1E2F-11E3-B953-92F59FB83F3F (Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.65 Safari/537.36).
+[Thu Sep 19 10:49:30 2013] [debug] Routing to controller "App::Crankshaft" and action "edit".
+[Thu Sep 19 10:49:30 2013] [debug] 200 OK (0.002458s, 406.835/s).
+Server available at http://127.0.0.1:3000.
