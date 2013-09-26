@@ -170,7 +170,7 @@ sub newform {
 		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
 		$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="10" size="10" value="' . $displaydate . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="20" size="6" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="20" size="11" value=""/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="20" size="10" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
@@ -443,7 +443,7 @@ sub edit {
 		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
 		$pagetext = $pagetext . '<tr><td><input type="text" name="recdate" maxlength="10" size="10" value="' . $self->displaydate($data_row->recdate) . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="20" size="6" value="' . $data_row->tracnum . '"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="20" size="11" value="' . $data_row->trlrnum . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="20" size="10" value="' . $data_row->trlrnum . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value="' . $data_row->driver . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value="' . $data_row->origin . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value="' . $data_row->destination . '"/></td>';
