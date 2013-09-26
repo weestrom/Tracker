@@ -16,7 +16,6 @@ sub frontpage {
 		my $pagetext = '<title> Tracker </title> <header><h1> Tracker </h1><br>';
 		$pagetext = $self->openform('inbound',$pagetext,'');
 	    $pagetext = $self->openform('outbound',$pagetext,'');
-	    $pagetext = $self->openform('shorthaul',$pagetext,'');
 	    
 	    $self->render(text => $pagetext);
 
@@ -325,19 +324,6 @@ sub submitoutbound {
 sub outbound {
 	my $self = shift;
 	my $date = $self->param('date');
-	my $currentdate = $self->param('currentdate');
-	if ($date eq '')
-	{
-		if ($currentdate eq '')
-		{
-			$date = $self->today;
-		}
-		else
-		{
-			$date = $self->tomorrow($currentdate);
-		}
-		
-	}
 	my $dbdate = $self->datehandler($date);
 	my $displaydate = $self->displaydate($dbdate);
 	my $pagetext = '<title> Tracker :: Outbound Loads </title> <header><h1>' . $displaydate .  ' Outbound Loads<br>';
@@ -346,84 +332,13 @@ sub outbound {
 		$pagetext = $pagetext . substr(time2str(str2time($dbdate)),0,3) . '<br>';
 	}
 	$pagetext = $pagetext . '</h1></header>';
-	$pagetext = $self->openform('outbound',$pagetext,$dbdate);
+	$pagetext = $self->openform('outbound',$pagetext,$displaydate);
 	    	
 	
 	if($self->datetest($dbdate))
 	{
 		$pagetext = $self->newform('outbound', $displaydate, $pagetext);
 		$pagetext = $self->resultstable('Outbound', $dbdate, $pagetext);
-		
-	}
-	$self->render(text => $pagetext);
-		
-	
-}
-
-sub submitshorthaul {
-	my $self = shift;
-	my $haul_rs = $self->app->schema->resultset('Data');
-	my $ug = new Data::UUID;
-	my $dbappt = $self->appthandler($self->param('appt'));
-	my $date = $self->param('date');
-	my $dbdate = $self->datehandler($date);
-	if ($self->datetest($dbdate))
-	{
-		my $new_haul = $haul_rs->new({
-		uuid => $ug->create_str(),
-		recdate => $dbdate,
-		tracnum => $self->param('tracnum'),
-		trlrnum => $self->param('trlrnum'),
-		driver => $self->param('driver'),
-		origin => $self->param('origin'),
-		destination => $self->param('destination'),
-		appt => $dbappt,
-		backhaul => $self->param('backhaul'),
-		direction => 'SHORTHAUL',
-		
-		});
-		$new_haul->insert;
-		$self->redirect_to('/shorthaul/' . $self->param('date'));
-	}
-	else
-	{
-		$self->render(text => 'Invalid Date Format');
-		
-	}
-
-}
-
-sub shorthaul {
-	my $self = shift;
-	my $date = $self->param('date');
-	my $currentdate = $self->param('currentdate');
-	if ($date eq '')
-	{
-		if ($currentdate eq '')
-		{
-			$date = $self->today;
-		}
-		else
-		{
-			$date = $self->tomorrow($currentdate);
-		}
-		
-	}
-	my $dbdate = $self->datehandler($date);
-	my $displaydate = $self->displaydate($dbdate);
-	my $pagetext = '<title> Tracker :: Shorthaul Loads </title> <header><h1>' . $displaydate .  ' Shorthaul Loads<br>';
-	if($self->datetest($dbdate))
-	{ 
-		$pagetext = $pagetext . substr(time2str(str2time($dbdate)),0,3) . '<br>';
-	}
-	$pagetext = $pagetext . '</h1></header>';
-	$pagetext = $self->openform('shorthaul',$pagetext,$dbdate);
-	    	
-	
-	if($self->datetest($dbdate))
-	{
-		$pagetext = $self->newform('shorthaul', $displaydate, $pagetext);
-		$pagetext = $self->resultstable('Shorthaul', $dbdate, $pagetext);
 		
 	}
 	$self->render(text => $pagetext);

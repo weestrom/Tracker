@@ -1698,3 +1698,912 @@ HandlerActivation(commandId=org.epic.perleditor.commands.clearMarker,
 HandlerActivation(commandId=org.epic.perleditor.commands.clearMarker,
 	handler=ActionDelegateHandlerProxy(null,org.epic.perleditor.actions.DefaultRetargetEditorDelegate),
 	expression=AndExpression(ViewerContributionExpression(#PerlEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@1e88b35),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1e88b35)),sourcePriority=-2147467264)
+!SESSION 2013-09-25 18:19:13.407 -----------------------------------------------
+eclipse.buildId=M20080221-1800
+java.version=1.6.0_51
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/eric/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/eric/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-25 18:19:25.736
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 18:29:53.631
+!MESSAGE An unexpected exception occurred while creating a link to lib/App/Crankshaft.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.PerlConsoleHyperlink.getEditorInput(PerlConsoleHyperlink.java:71)
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:29:53.632
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:29:53.632
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 4 0 2013-09-25 18:29:53.682
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 18:29:56.200
+!MESSAGE An unexpected exception occurred while creating a link to lib/App/Crankshaft.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.PerlConsoleHyperlink.getEditorInput(PerlConsoleHyperlink.java:71)
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:29:56.201
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:29:56.201
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 4 0 2013-09-25 18:29:56.201
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-09-25 18:30:43.811
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-09-25 18:30:43.811
+!MESSAGE Conflict for 'org.epic.perleditor.commands.clearMarker':
+HandlerActivation(commandId=org.epic.perleditor.commands.clearMarker,
+	handler=ActionDelegateHandlerProxy(null,org.epic.perleditor.actions.DefaultRetargetEditorDelegate),
+	expression=AndExpression(ViewerContributionExpression(#PerlEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@c07527),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@c07527)),sourcePriority=-2147467264)
+HandlerActivation(commandId=org.epic.perleditor.commands.clearMarker,
+	handler=ActionDelegateHandlerProxy(null,org.epic.perleditor.actions.DefaultRetargetEditorDelegate),
+	expression=AndExpression(ViewerContributionExpression(#PerlEditorContext,null,org.eclipse.ui.internal.WorkbenchWindow@c07527),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@c07527)),sourcePriority=-2147467264)
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 18:39:48.122
+!MESSAGE An unexpected exception occurred while creating a link to lib/App/Crankshaft.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.PerlConsoleHyperlink.getEditorInput(PerlConsoleHyperlink.java:71)
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:39:48.123
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:39:48.123
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 4 0 2013-09-25 18:39:48.124
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 18:39:52.489
+!MESSAGE An unexpected exception occurred while creating a link to lib/App/Crankshaft.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.PerlConsoleHyperlink.getEditorInput(PerlConsoleHyperlink.java:71)
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:39:52.490
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:39:52.490
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 4 0 2013-09-25 18:39:52.491
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 18:39:55.839
+!MESSAGE An unexpected exception occurred while creating a link to lib/App/Crankshaft.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.PerlConsoleHyperlink.getEditorInput(PerlConsoleHyperlink.java:71)
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:39:55.840
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:39:55.840
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 4 0 2013-09-25 18:39:55.840
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 18:40:38.318
+!MESSAGE An unexpected exception occurred while creating a link to lib/App/Crankshaft.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.PerlConsoleHyperlink.getEditorInput(PerlConsoleHyperlink.java:71)
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2950)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:40:38.318
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:40:38.318
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 4 0 2013-09-25 18:40:38.318
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2950)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 18:40:38.444
+!MESSAGE An unexpected exception occurred while creating a link to lib/App/Crankshaft.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.PerlConsoleHyperlink.getEditorInput(PerlConsoleHyperlink.java:71)
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:40:38.445
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:40:38.445
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 4 0 2013-09-25 18:40:38.446
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 18:40:41.028
+!MESSAGE An unexpected exception occurred while creating a link to lib/App/Crankshaft.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.PerlConsoleHyperlink.getEditorInput(PerlConsoleHyperlink.java:71)
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:40:41.029
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:40:41.029
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 4 0 2013-09-25 18:40:41.030
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 18:41:21.480
+!MESSAGE An unexpected exception occurred while creating a link to lib/App/Crankshaft.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.PerlConsoleHyperlink.getEditorInput(PerlConsoleHyperlink.java:71)
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:41:21.480
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 18:41:21.481
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 4 0 2013-09-25 18:41:21.482
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.epic.debug.ui.PerlConsoleHyperlink.linkActivated(PerlConsoleHyperlink.java:42)
+	at org.eclipse.ui.console.TextConsoleViewer$2.handleEvent(TextConsoleViewer.java:103)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:66)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1495)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1519)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1504)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1295)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3350)
+	at org.eclipse.swt.widgets.Control.sendTrackEvents(Control.java:2839)
+	at org.eclipse.swt.widgets.Control.kEventControlTrack(Control.java:1961)
+	at org.eclipse.swt.widgets.Widget.controlProc(Widget.java:367)
+	at org.eclipse.swt.widgets.Display.controlProc(Display.java:827)
+	at org.eclipse.swt.internal.carbon.OS.SendEventToEventTarget(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:2934)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2389)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2353)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2219)
+	at org.eclipse.ui.internal.Workbench$4.run(Workbench.java:466)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:289)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:461)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:106)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:169)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:106)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:76)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:363)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:508)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:447)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1173)
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 19:53:33.800
+!MESSAGE An unexpected exception occurred while creating a link to /Library/Perl/5.12/Mojolicious/Routes.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.DebugModelPresentation.getEditorInput(DebugModelPresentation.java:160)
+	at org.eclipse.debug.internal.ui.LazyModelPresentation.getEditorInput(LazyModelPresentation.java:212)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupFacility.lookup(SourceLookupFacility.java:174)
+	at org.eclipse.debug.ui.DebugUITools.lookupSource(DebugUITools.java:749)
+	at org.eclipse.debug.internal.ui.elements.adapters.StackFrameSourceDisplayAdapter$SourceLookupJob.run(StackFrameSourceDisplayAdapter.java:118)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 19:53:33.800
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 19:53:33.801
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 19:53:33.836
+!MESSAGE An unexpected exception occurred while creating a link to /Library/Perl/5.12/Mojolicious/Routes.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.DebugModelPresentation.getEditorInput(DebugModelPresentation.java:160)
+	at org.eclipse.debug.internal.ui.LazyModelPresentation.getEditorInput(LazyModelPresentation.java:212)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupFacility.lookup(SourceLookupFacility.java:174)
+	at org.eclipse.debug.ui.DebugUITools.lookupSource(DebugUITools.java:749)
+	at org.eclipse.debug.internal.ui.elements.adapters.StackFrameSourceDisplayAdapter$SourceLookupJob.run(StackFrameSourceDisplayAdapter.java:118)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 19:53:33.837
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 19:53:33.837
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 19:55:45.064
+!MESSAGE An unexpected exception occurred while creating a link to /Library/Perl/5.12/Mojolicious/Routes.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.DebugModelPresentation.getEditorInput(DebugModelPresentation.java:160)
+	at org.eclipse.debug.internal.ui.LazyModelPresentation.getEditorInput(LazyModelPresentation.java:212)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupFacility.lookup(SourceLookupFacility.java:174)
+	at org.eclipse.debug.ui.DebugUITools.lookupSource(DebugUITools.java:749)
+	at org.eclipse.debug.internal.ui.elements.adapters.StackFrameSourceDisplayAdapter$SourceLookupJob.run(StackFrameSourceDisplayAdapter.java:118)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 19:55:45.064
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 19:55:45.065
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.epic.perleditor 4 0 2013-09-25 19:55:45.100
+!MESSAGE An unexpected exception occurred while creating a link to /Library/Perl/5.12/Mojolicious/Routes.pm
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:663)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:792)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:698)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:841)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:879)
+	at org.epic.core.util.FileUtilities.getEpicLinksProject(FileUtilities.java:111)
+	at org.epic.core.util.FileUtilities.getFileEditorInput(FileUtilities.java:27)
+	at org.epic.debug.ui.DebugModelPresentation.getEditorInput(DebugModelPresentation.java:160)
+	at org.eclipse.debug.internal.ui.LazyModelPresentation.getEditorInput(LazyModelPresentation.java:212)
+	at org.eclipse.debug.internal.ui.sourcelookup.SourceLookupFacility.lookup(SourceLookupFacility.java:174)
+	at org.eclipse.debug.ui.DebugUITools.lookupSource(DebugUITools.java:749)
+	at org.eclipse.debug.internal.ui.elements.adapters.StackFrameSourceDisplayAdapter$SourceLookupJob.run(StackFrameSourceDisplayAdapter.java:118)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 19:55:45.101
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2013-09-25 19:55:45.101
+!MESSAGE The project description file (.project) for 'epic_links' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.

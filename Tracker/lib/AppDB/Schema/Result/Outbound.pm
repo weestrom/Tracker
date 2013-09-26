@@ -37,13 +37,15 @@ __PACKAGE__->table("outbound");
 
 =head2 tracnum
 
-  data_type: 'integer'
+  data_type: 'char'
   is_nullable: 1
+  size: 20
 
 =head2 trlrnum
 
-  data_type: 'integer'
+  data_type: 'char'
   is_nullable: 1
+  size: 20
 
 =head2 driver
 
@@ -83,9 +85,9 @@ __PACKAGE__->add_columns(
   "recdate",
   { data_type => "date", datetime_undef_if_invalid => 1, is_nullable => 1 },
   "tracnum",
-  { data_type => "integer", is_nullable => 1 },
+  { data_type => "char", is_nullable => 1, size => 20 },
   "trlrnum",
-  { data_type => "integer", is_nullable => 1 },
+  { data_type => "char", is_nullable => 1, size => 20 },
   "driver",
   { data_type => "char", is_nullable => 1, size => 30 },
   "origin",
@@ -103,8 +105,8 @@ __PACKAGE__->add_columns(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07033 @ 2013-09-12 14:19:25
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:pZMPLv9M8otvfnQrgFNvhg
+# Created by DBIx::Class::Schema::Loader v0.07033 @ 2013-09-25 18:19:43
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:OpCpPctOffv/wOgX0klcRw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

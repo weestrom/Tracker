@@ -346,7 +346,7 @@ sub outbound {
 		$pagetext = $pagetext . substr(time2str(str2time($dbdate)),0,3) . '<br>';
 	}
 	$pagetext = $pagetext . '</h1></header>';
-	$pagetext = $self->openform('outbound',$pagetext,$dbdate);
+	$pagetext = $self->openform('outbound',$pagetext,$displaydate);
 	    	
 	
 	if($self->datetest($dbdate))
@@ -417,7 +417,7 @@ sub shorthaul {
 		$pagetext = $pagetext . substr(time2str(str2time($dbdate)),0,3) . '<br>';
 	}
 	$pagetext = $pagetext . '</h1></header>';
-	$pagetext = $self->openform('shorthaul',$pagetext,$dbdate);
+	$pagetext = $self->openform('shorthaul',$pagetext,$displaydate);
 	    	
 	
 	if($self->datetest($dbdate))

@@ -1,12 +1,12 @@
 use utf8;
-package AppDB::Schema::Result::Inbound;
+package AppDB::Schema::Result::Shorthaul;
 
 # Created by DBIx::Class::Schema::Loader
 # DO NOT MODIFY THE FIRST PART OF THIS FILE
 
 =head1 NAME
 
-AppDB::Schema::Result::Inbound - VIEW
+AppDB::Schema::Result::Shorthaul - VIEW
 
 =cut
 
@@ -15,11 +15,11 @@ use warnings;
 
 use base 'DBIx::Class::Core';
 
-=head1 TABLE: C<inbound>
+=head1 TABLE: C<shorthaul>
 
 =cut
 
-__PACKAGE__->table("inbound");
+__PACKAGE__->table("shorthaul");
 
 =head1 ACCESSORS
 
@@ -105,8 +105,8 @@ __PACKAGE__->add_columns(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07033 @ 2013-09-25 18:19:43
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:HJpAvvLpyXvLX6Pk9EYrfQ
+# Created by DBIx::Class::Schema::Loader v0.07033 @ 2013-09-25 19:43:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:ChINSoS2qAg7evmmaIdlSg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

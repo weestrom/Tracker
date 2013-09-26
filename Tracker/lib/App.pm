@@ -39,12 +39,17 @@ sub startup {
 	#Applicaton routes
 	$r->route( '/inbound/')->to('crankshaft#inbound');
 	$r->route( '/outbound/')->to('crankshaft#outbound');
+	$r->route( '/shorthaul/')->to('crankshaft#shorthaul');
+	
 	$r->route( '/inbound/*date')->to('crankshaft#inbound');
 	$r->route( '/outbound/*date')->to('crankshaft#outbound');
+	$r->route( '/shorthaul/*date')->to('crankshaft#shorthaul');
+	
 	#$r->route( '/newinbound/submitinbound/')->to('crankshaft#submitinbound');
 	#$r->route( '/newoutbound/submitoutbound/')->to('crankshaft#submitoutbound');
 	$r->route( '/submitinbound/')->to('crankshaft#submitinbound');
 	$r->route( '/submitoutbound/')->to('crankshaft#submitoutbound');
+	$r->route( '/submitshorthaul/')->to('crankshaft#submitshorthaul');
 	$r->route( '/edit/uuidedit')->to('crankshaft#uuidedit');
 	$r->route( '/edit/:uuid')->to('crankshaft#edit');
 	}
