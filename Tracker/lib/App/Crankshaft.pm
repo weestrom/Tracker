@@ -165,16 +165,16 @@ sub newform {
 	my $pagetext = shift;
 	
 	$pagetext = $pagetext . '<form action="/submit' . $direction . '" method="POST">';
+		$pagetext = $pagetext . '<input type="hidden" name="date" value="' . $displaydate . '"/>';
 		$pagetext = $pagetext . 'New Load:';
 		$pagetext = $pagetext . '<table border="0">';
-		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
-		$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="10" size="10" value="' . $displaydate . '"/></td>';
+		$pagetext = $pagetext . '<tr><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
 		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="20" size="6" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="20" size="11" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value="000000 00:00"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value=""/></td></tr>';
 		$pagetext = $pagetext . '</table>';
 		$pagetext = $pagetext . '<input type="submit" value="Submit" />';
@@ -206,8 +206,7 @@ sub resultstable {
 		$pagetext = $pagetext . '<td>' . $row->driver . '</td>';
 		$pagetext = $pagetext . '<td>' . $row->origin . '</td>';
 		$pagetext = $pagetext . '<td>' . $row->destination . '</td>';
-		my @apptsplit = split(' ',$row->appt);
-		$pagetext = $pagetext . '<td>' . $self->displaydate($apptsplit[0]) . ' ' . substr($apptsplit[1],0,5) . ' ' .substr(time2str(str2time($apptsplit[0])),0,3) . '</td>';
+		$pagetext = $pagetext . '<td>' . $row->appt . '</td>';
 		$pagetext = $pagetext . '<td>' . $row->backhaul . '</td></tr>';
 	}
 	$pagetext = $pagetext . '</table><br>';
@@ -219,8 +218,6 @@ sub submitinbound {
 	my $self = shift;
 	my $haul_rs = $self->app->schema->resultset('Data');
 	my $ug = new Data::UUID;
-	my $dbappt = $self->appthandler($self->param('appt'));
-	
 	my $date = $self->param('date');
 	my $dbdate = $self->datehandler($date);
 	if ($self->datetest($dbdate))
@@ -233,7 +230,7 @@ sub submitinbound {
 		driver => $self->param('driver'),
 		origin => $self->param('origin'),
 		destination => $self->param('destination'),
-		appt => $dbappt,
+		appt => $self->param('appt'),
 		backhaul => $self->param('backhaul'),
 		direction => 'INBOUND',
 		
@@ -293,7 +290,6 @@ sub submitoutbound {
 	my $self = shift;
 	my $haul_rs = $self->app->schema->resultset('Data');
 	my $ug = new Data::UUID;
-	my $dbappt = $self->appthandler($self->param('appt'));
 	my $date = $self->param('date');
 	my $dbdate = $self->datehandler($date);
 	if ($self->datetest($dbdate))
@@ -306,7 +302,7 @@ sub submitoutbound {
 		driver => $self->param('driver'),
 		origin => $self->param('origin'),
 		destination => $self->param('destination'),
-		appt => $dbappt,
+		appt => $self->param('appt'),
 		backhaul => $self->param('backhaul'),
 		direction => 'OUTBOUND',
 		
@@ -364,7 +360,6 @@ sub submitshorthaul {
 	my $self = shift;
 	my $haul_rs = $self->app->schema->resultset('Data');
 	my $ug = new Data::UUID;
-	my $dbappt = $self->appthandler($self->param('appt'));
 	my $date = $self->param('date');
 	my $dbdate = $self->datehandler($date);
 	if ($self->datetest($dbdate))
@@ -377,7 +372,7 @@ sub submitshorthaul {
 		driver => $self->param('driver'),
 		origin => $self->param('origin'),
 		destination => $self->param('destination'),
-		appt => $dbappt,
+		appt => $self->param('appt'),
 		backhaul => $self->param('backhaul'),
 		direction => 'SHORTHAUL',
 		
@@ -439,15 +434,15 @@ sub edit {
 	{
 		my $pagetext = '<form action="uuidedit" method="POST"><input type="hidden" name="uuid" value="' . $uuid . '"/>';
 		$pagetext = $pagetext . '<input type="hidden" name="direction" value="' . $data_row->direction . '"/>';
+		$pagetext = $pagetext . '<input type="hidden" name="recdate" value="' . $self->displaydate($data_row->recdate) . '"/>';
 		$pagetext = $pagetext . '<table border="0">';
-		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
-		$pagetext = $pagetext . '<tr><td><input type="text" name="recdate" maxlength="10" size="10" value="' . $self->displaydate($data_row->recdate) . '"/></td>';
+		$pagetext = $pagetext . '<tr><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
 		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="20" size="6" value="' . $data_row->tracnum . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="20" size="11" value="' . $data_row->trlrnum . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value="' . $data_row->driver . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value="' . $data_row->origin . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value="' . $data_row->destination . '"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="20" size="20" value="' . $self->displaydate(substr($data_row->appt,0,10)) . substr($data_row->appt,10,6) . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="20" size="20" value="' . $data_row->appt . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value="' . $data_row->backhaul . '"/></td></tr>';
 		$pagetext = $pagetext . '</table>';
 		$pagetext = $pagetext . '<input type="submit" value="Submit" />';
@@ -473,7 +468,7 @@ sub uuidedit {
 			'driver' => $self->param('driver'),
 			'origin' => $self->param('origin'),
 			'destination' => $self->param('destination'),
-			'appt' => $self->appthandler($self->param('appt')),
+			'appt' => $self->param('appt'),
 			'backhaul' => $self->param('backhaul')
 				
 		});

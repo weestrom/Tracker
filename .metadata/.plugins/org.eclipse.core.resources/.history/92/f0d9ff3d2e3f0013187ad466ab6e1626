@@ -9,13 +9,16 @@ package App::Crankshaft;
 use base 'Mojolicious::Controller';
 use Data::UUID;
 use HTTP::Date;
+use HTTP::Date qw/ time2iso /;
 
 sub frontpage {
 	my $self = shift;
 		my $pagetext = '<title> Tracker </title> <header><h1> Tracker </h1><br>';
-		$pagetext = $pagetext . '<form action="/inbound/" method="GET">Open Inbound Date (MMDDYY):<input name="date" value="" type="text"><input type="submit"></form><br>';
-		$pagetext = $pagetext . '<form action="/outbound/" method="GET">Open Outbound Date (MMDDYY):<input name="date" value="" type="text"><input type="submit"></form><br>';
-		$self->render(text => $pagetext);
+		$pagetext = $self->openform('inbound',$pagetext,'');
+	    $pagetext = $self->openform('outbound',$pagetext,'');
+	    $pagetext = $self->openform('shorthaul',$pagetext,'');
+	    
+	    $self->render(text => $pagetext);
 
 }
 
@@ -52,8 +55,15 @@ sub datehandler {
 sub displaydate {
 	my $self = shift;
 	my $datestring = shift;
+	if ($datestring eq '')
+	{
+		return '';
+	}
+	else
+	{
+		return substr($datestring,5,2) . substr($datestring,8,2) . substr($datestring,2,2);
+	}
 	
-	return substr($datestring,5,2) . substr($datestring,8,2) . substr($datestring,2,2);
 }
 
 sub datetest {
@@ -71,7 +81,11 @@ sub datetest {
 			$numresult = 1;
 		}
 	}
-	if (scalar(@datelist) != 3 || length($datelist[0]) != 4 || length($datelist[1]) != 2 || length($datelist[2]) != 2 || $numresult == 1)
+	if ($date eq '')
+	{
+		return 0;
+	}
+	elsif (scalar(@datelist) != 3 || length($datelist[0]) != 4 || length($datelist[1]) != 2 || length($datelist[2]) != 2 || $numresult == 1)
 	{
 		return 0;
 		
@@ -80,6 +94,29 @@ sub datetest {
 	{
 		return 1;
 	}
+}
+
+sub today {
+	my $self = shift;
+	my $currentdate = shift;
+	
+	my ($second, $minute, $hour, $dayOfMonth, $month, $yearOffset, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
+		my $year = $yearOffset - 100;
+		return sprintf("%02d", $month + 1) . sprintf("%02d", $dayOfMonth) . $year;
+	
+}
+
+
+sub tomorrow {
+	my $self = shift;
+	my $currentdate = shift;
+	
+	my $datesecs = str2time($currentdate);
+	$datesecs = $datesecs + 24*60*60;
+	my $isotomorrow = time2iso($datesecs);
+	my @datelist = split('-',substr($isotomorrow,0,10));
+	return $datelist[1] . $datelist[2] . substr($datelist[0],2,2);
+	
 }
 
 sub appthandler {
@@ -93,13 +130,13 @@ sub appthandler {
 	}
 	
 	my $timetest = $apptsplit[1];
-	$timetest =~ s/[0-9]://g;
+	$timetest =~ s/[0-9]?[0-9]:[0-9][0-9]//g;
 	if (!($timetest eq ''))
 	{
 		@apptsplit = ( $apptsplit[0], "00:00");
 	}
 	
-	if ($self->datehandler($appsplit[0]))
+	if ($self->datehandler($apptsplit[0]))
 	{
 		return $self->datehandler($apptsplit[0]) . ' ' . $apptsplit[1];
 	}
@@ -108,39 +145,16 @@ sub appthandler {
 		return '0000-00-00 ' . $apptsplit[1];
 	}	
 }
-sub submitinbound {
-	my $self = shift;
-	my $haul_rs = $self->app->schema->resultset('Data');
-	my $ug = new Data::UUID;
-	my $dbappt = $self->appthandler($self->param('appt'));
-	
-	$appt = $self->datehandler($apptsplit[0]) . ' '  . $apptsplit[1];
-	my $date = $self->param('date');
-	my $dbdate = $self->datehandler($date);
-	if ($self->datetest($dbdate))
-	{
-		my $new_haul = $haul_rs->new({
-		uuid => $ug->create_str(),
-		recdate => $dbdate,
-		tracnum => $self->param('tracnum'),
-		trlrnum => $self->param('trlrnum'),
-		driver => $self->param('driver'),
-		origin => $self->param('origin'),
-		destination => $self->param('destination'),
-		appt => $dbappt,
-		backhaul => $self->param('backhaul'),
-		direction => 'INBOUND',
-		
-		});
-		$new_haul->insert;
-		$self->redirect_to('/inbound/' . $self->param('date'));
-	}
-	else
-	{
-		$self->render(text => 'Invalid Date Format');
-		
-	}
 
+sub openform{
+	my $self = shift;
+	my $direction = shift;
+	my $pagetext = shift;
+	my $currentdate = shift;
+	my $displaydirection = $direction;
+	$displaydirection =~ s/^./\U$&/g;
+	$pagetext = $pagetext . '<form action="/' . $direction . '/" method="GET">Open ' . $displaydirection . ' Date (MMDDYY):<input name="date" value="" type="text"><input name="currentdate" value="' . $currentdate . '" type="hidden"><input type="submit"></form><br>';
+	return $pagetext;	
 }
 
 sub newform {
@@ -151,12 +165,12 @@ sub newform {
 	my $pagetext = shift;
 	
 	$pagetext = $pagetext . '<form action="/submit' . $direction . '" method="POST">';
+		$pagetext = $pagetext . '<input type="hidden" name="date" value=' . $displaydate . '/>';
 		$pagetext = $pagetext . 'New Load:';
 		$pagetext = $pagetext . '<table border="0">';
-		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
-		$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="10" size="10" value="' . $displaydate . '"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value=""/></td>';
+		$pagetext = $pagetext . '<tr><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
+		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="20" size="6" value=""/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="20" size="11" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
@@ -174,7 +188,9 @@ sub resultstable {
 	
 	my $self = shift;
 	my $direction = shift;
+	my $dbdate = shift;
 	my $pagetext = shift;
+	
 	
 	$pagetext = $pagetext . '<table border="1">';
 	$pagetext = $pagetext . '<tr><td></td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
@@ -190,8 +206,7 @@ sub resultstable {
 		$pagetext = $pagetext . '<td>' . $row->driver . '</td>';
 		$pagetext = $pagetext . '<td>' . $row->origin . '</td>';
 		$pagetext = $pagetext . '<td>' . $row->destination . '</td>';
-		my @apptsplit = split(' ',$row->appt);
-		$pagetext = $pagetext . '<td>' . $self->displaydate($apptsplit[0]) . ' ' . substr($apptsplit[1],0,5) . ' ' .substr(time2str(str2time($apptsplit[0])),0,3) . '</td>';
+		$pagetext = $pagetext . '<td>' . $row->appt . '</td>';
 		$pagetext = $pagetext . '<td>' . $row->backhaul . '</td></tr>';
 	}
 	$pagetext = $pagetext . '</table><br>';
@@ -199,37 +214,10 @@ sub resultstable {
 	return $pagetext;
 }
 
-sub inbound {
-	my $self = shift;
-	my $date = $self->param('date');
-	my $dbdate = $self->datehandler($date);
-	my $displaydate = $self->displaydate($dbdate);
-	
-	my $pagetext = '<title> Tracker :: Inbound Loads </title> <header><h1>' . $displaydate .  ' Inbound Loads<br>';
-	if($self->datetest($dbdate))
-	{
-	 $pagetext = $pagetext . substr(time2str(str2time($dbdate)),0,3) . '<br>';	
-	}
-	$pagetext = $pagetext . '</h1><form action="/inbound/" method="GET">Open Date (MMDDYY):<input name="date" value="" type="text"><input type="submit"></form><br>';
-		
-	
-	if($self->datetest($dbdate))
-	{
-		
-		$pagetext = $self->newform('inbound', $displaydate, $pagetext);
-		$pagetext = $self->resultstable('Inbound', $pagetext);
-			
-	}
-	$self->render(text => $pagetext);
-		
-	
-}
-
-sub submitoutbound {
+sub submitinbound {
 	my $self = shift;
 	my $haul_rs = $self->app->schema->resultset('Data');
 	my $ug = new Data::UUID;
-	my $dbappt = $self->appthandler($self->param('appt'));
 	my $date = $self->param('date');
 	my $dbdate = $self->datehandler($date);
 	if ($self->datetest($dbdate))
@@ -242,7 +230,79 @@ sub submitoutbound {
 		driver => $self->param('driver'),
 		origin => $self->param('origin'),
 		destination => $self->param('destination'),
-		appt => $dbappt,
+		appt => $self->param('appt'),
+		backhaul => $self->param('backhaul'),
+		direction => 'INBOUND',
+		
+		});
+		$new_haul->insert;
+		$self->redirect_to('/inbound/' . $self->param('date'));
+	}
+	else
+	{
+		$self->render(text => 'Invalid Date Format');
+		
+	}
+
+}
+
+sub inbound {
+	my $self = shift;
+	my $date = $self->param('date');
+	my $currentdate = $self->param('currentdate');
+	if ($date eq '')
+	{
+		if ($currentdate eq '')
+		{
+			$date = $self->today;
+		}
+		else
+		{
+			$date = $self->tomorrow($currentdate);
+		}
+		
+	}
+	my $dbdate = $self->datehandler($date);
+	my $displaydate = $self->displaydate($dbdate);
+	
+	my $pagetext = '<title> Tracker :: Inbound Loads </title> <header><h1>' . $displaydate .  ' Inbound Loads<br>';
+	if($self->datetest($dbdate))
+	{
+	 $pagetext = $pagetext . substr(time2str(str2time($dbdate)),0,3) . '<br>';	
+	}
+	$pagetext = $pagetext . '</h1></header>';
+	$pagetext = $self->openform('inbound',$pagetext,$dbdate);
+	    	
+	
+	if($self->datetest($dbdate))
+	{
+		
+		$pagetext = $self->newform('inbound', $displaydate, $pagetext);
+		$pagetext = $self->resultstable('Inbound', $dbdate, $pagetext);
+			
+	}
+	$self->render(text => $pagetext);
+		
+	
+}
+
+sub submitoutbound {
+	my $self = shift;
+	my $haul_rs = $self->app->schema->resultset('Data');
+	my $ug = new Data::UUID;
+	my $date = $self->param('date');
+	my $dbdate = $self->datehandler($date);
+	if ($self->datetest($dbdate))
+	{
+		my $new_haul = $haul_rs->new({
+		uuid => $ug->create_str(),
+		recdate => $dbdate,
+		tracnum => $self->param('tracnum'),
+		trlrnum => $self->param('trlrnum'),
+		driver => $self->param('driver'),
+		origin => $self->param('origin'),
+		destination => $self->param('destination'),
+		appt => $self->param('appt'),
 		backhaul => $self->param('backhaul'),
 		direction => 'OUTBOUND',
 		
@@ -261,6 +321,19 @@ sub submitoutbound {
 sub outbound {
 	my $self = shift;
 	my $date = $self->param('date');
+	my $currentdate = $self->param('currentdate');
+	if ($date eq '')
+	{
+		if ($currentdate eq '')
+		{
+			$date = $self->today;
+		}
+		else
+		{
+			$date = $self->tomorrow($currentdate);
+		}
+		
+	}
 	my $dbdate = $self->datehandler($date);
 	my $displaydate = $self->displaydate($dbdate);
 	my $pagetext = '<title> Tracker :: Outbound Loads </title> <header><h1>' . $displaydate .  ' Outbound Loads<br>';
@@ -268,47 +341,84 @@ sub outbound {
 	{ 
 		$pagetext = $pagetext . substr(time2str(str2time($dbdate)),0,3) . '<br>';
 	}
-	$pagetext = $pagetext . '</h1><form action="/outbound/" method="GET">Open Date (MMDDYY):<input name="date" value="" type="text"><input type="submit"></form><br>';
-		
+	$pagetext = $pagetext . '</h1></header>';
+	$pagetext = $self->openform('outbound',$pagetext,$dbdate);
+	    	
 	
 	if($self->datetest($dbdate))
 	{
-		$pagetext = $pagetext . 'New Load:';
-		$pagetext = $pagetext . '<form action="/submitoutbound" method="POST">';
+		$pagetext = $self->newform('outbound', $displaydate, $pagetext);
+		$pagetext = $self->resultstable('Outbound', $dbdate, $pagetext);
 		
-		$pagetext = $pagetext . '<table border="0">';
-		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
-		$pagetext = $pagetext . '<tr><td><input type="text" name="date" maxlength="10" size="10" value="' . $displaydate . '"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value=""/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="16" size="16" value="000000 00:00"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value=""/></td></tr>';
-		$pagetext = $pagetext . '</table>';
-		$pagetext = $pagetext . '<input type="submit" value="Submit" />';
-		$pagetext = $pagetext . '</form>';
+	}
+	$self->render(text => $pagetext);
 		
-		$pagetext = $pagetext . '<table border="1">';
-		$pagetext = $pagetext . '<tr><td></td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
+	
+}
+
+sub submitshorthaul {
+	my $self = shift;
+	my $haul_rs = $self->app->schema->resultset('Data');
+	my $ug = new Data::UUID;
+	my $date = $self->param('date');
+	my $dbdate = $self->datehandler($date);
+	if ($self->datetest($dbdate))
+	{
+		my $new_haul = $haul_rs->new({
+		uuid => $ug->create_str(),
+		recdate => $dbdate,
+		tracnum => $self->param('tracnum'),
+		trlrnum => $self->param('trlrnum'),
+		driver => $self->param('driver'),
+		origin => $self->param('origin'),
+		destination => $self->param('destination'),
+		appt => $self->param('appt'),
+		backhaul => $self->param('backhaul'),
+		direction => 'SHORTHAUL',
 		
-		my $outbound_rs = $self->app->schema->resultset('Outbound');
-		my $outbound_search = $outbound_rs->search({recdate => $dbdate});
-		my $outbound_row;
-		while ( $outbound_row = $outbound_search->next || '')
+		});
+		$new_haul->insert;
+		$self->redirect_to('/shorthaul/' . $self->param('date'));
+	}
+	else
+	{
+		$self->render(text => 'Invalid Date Format');
+		
+	}
+
+}
+
+sub shorthaul {
+	my $self = shift;
+	my $date = $self->param('date');
+	my $currentdate = $self->param('currentdate');
+	if ($date eq '')
+	{
+		if ($currentdate eq '')
 		{
-			$pagetext = $pagetext . '<tr><td><a href="' . $self->url_for('/edit/' . $outbound_row->uuid) . '">edit</a></td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->tracnum . '</td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->trlrnum . '</td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->driver . '</td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->origin . '</td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->destination . '</td>';
-			my @apptsplit = split(' ',$outbound_row->appt);
-			$pagetext = $pagetext . '<td>' . $self->displaydate($apptsplit[0]) . ' ' . substr($apptsplit[1],0,5) . ' ' .substr(time2str(str2time($apptsplit[0])),0,3) . '</td>';
-			$pagetext = $pagetext . '<td>' . $outbound_row->backhaul . '</td></tr>';
+			$date = $self->today;
 		}
-		$pagetext = $pagetext . '</table><br>';
+		else
+		{
+			$date = $self->tomorrow($currentdate);
+		}
+		
+	}
+	my $dbdate = $self->datehandler($date);
+	my $displaydate = $self->displaydate($dbdate);
+	my $pagetext = '<title> Tracker :: Shorthaul Loads </title> <header><h1>' . $displaydate .  ' Shorthaul Loads<br>';
+	if($self->datetest($dbdate))
+	{ 
+		$pagetext = $pagetext . substr(time2str(str2time($dbdate)),0,3) . '<br>';
+	}
+	$pagetext = $pagetext . '</h1></header>';
+	$pagetext = $self->openform('shorthaul',$pagetext,$dbdate);
+	    	
+	
+	if($self->datetest($dbdate))
+	{
+		$pagetext = $self->newform('shorthaul', $displaydate, $pagetext);
+		$pagetext = $self->resultstable('Shorthaul', $dbdate, $pagetext);
 		
 	}
 	$self->render(text => $pagetext);
@@ -324,15 +434,15 @@ sub edit {
 	{
 		my $pagetext = '<form action="uuidedit" method="POST"><input type="hidden" name="uuid" value="' . $uuid . '"/>';
 		$pagetext = $pagetext . '<input type="hidden" name="direction" value="' . $data_row->direction . '"/>';
+		$pagetext = $pagetext . '<input type="hidden" name="recdate" value="' . $self->displaydate($data_row->recdate) . '"/>';
 		$pagetext = $pagetext . '<table border="0">';
-		$pagetext = $pagetext . '<tr><td>Date<br />(mmddyy)</td><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt<br />(mmddyy hh:mm)</td><td>Backhaul</td></tr>';
-		$pagetext = $pagetext . '<tr><td><input type="text" name="recdate" maxlength="10" size="10" value="' . $self->displaydate($data_row->recdate) . '"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="6" size="6" value="' . $data_row->tracnum . '"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="6" size="6" value="' . $data_row->trlrnum . '"/></td>';
+		$pagetext = $pagetext . '<tr><td>Trac#</td><td>Trlr#</td><td>Driver</td><td>Origin</td><td>Destination</td><td>Appt</td><td>Backhaul</td></tr>';
+		$pagetext = $pagetext . '<td><input type="text" name="tracnum" maxlength="20" size="6" value="' . $data_row->tracnum . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="trlrnum" maxlength="20" size="11" value="' . $data_row->trlrnum . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="driver" maxlength="30" size="12" value="' . $data_row->driver . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="origin" maxlength="30" size="12" value="' . $data_row->origin . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="destination" maxlength="30" size="12" value="' . $data_row->destination . '"/></td>';
-		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="20" size="20" value="' . $self->displaydate(substr($data_row->appt,0,10)) . substr($data_row->appt,10,6) . '"/></td>';
+		$pagetext = $pagetext . '<td><input type="text" name="appt" maxlength="20" size="20" value="' . $data_row->appt . '"/></td>';
 		$pagetext = $pagetext . '<td><input type="text" name="backhaul" maxlength="30" size="12" value="' . $data_row->backhaul . '"/></td></tr>';
 		$pagetext = $pagetext . '</table>';
 		$pagetext = $pagetext . '<input type="submit" value="Submit" />';
@@ -358,7 +468,7 @@ sub uuidedit {
 			'driver' => $self->param('driver'),
 			'origin' => $self->param('origin'),
 			'destination' => $self->param('destination'),
-			'appt' => $self->appthandler($self->param('appt')),
+			'appt' => $self->param('appt'),
 			'backhaul' => $self->param('backhaul')
 				
 		});

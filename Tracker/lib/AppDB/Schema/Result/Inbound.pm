@@ -67,9 +67,9 @@ __PACKAGE__->table("inbound");
 
 =head2 appt
 
-  data_type: 'datetime'
-  datetime_undef_if_invalid: 1
+  data_type: 'char'
   is_nullable: 1
+  size: 20
 
 =head2 backhaul
 
@@ -95,18 +95,14 @@ __PACKAGE__->add_columns(
   "destination",
   { data_type => "char", is_nullable => 1, size => 30 },
   "appt",
-  {
-    data_type => "datetime",
-    datetime_undef_if_invalid => 1,
-    is_nullable => 1,
-  },
+  { data_type => "char", is_nullable => 1, size => 20 },
   "backhaul",
   { data_type => "char", is_nullable => 1, size => 30 },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07033 @ 2013-09-25 18:19:43
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:HJpAvvLpyXvLX6Pk9EYrfQ
+# Created by DBIx::Class::Schema::Loader v0.07036 @ 2013-10-27 12:31:21
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:PC/+7YY3Ram0YvyzaIiLSQ
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

@@ -67,9 +67,9 @@ __PACKAGE__->table("Data");
 
 =head2 appt
 
-  data_type: 'datetime'
-  datetime_undef_if_invalid: 1
+  data_type: 'char'
   is_nullable: 1
+  size: 20
 
 =head2 backhaul
 
@@ -81,7 +81,7 @@ __PACKAGE__->table("Data");
 
   data_type: 'char'
   is_nullable: 0
-  size: 8
+  size: 10
 
 =head2 rectimestamp
 
@@ -108,15 +108,11 @@ __PACKAGE__->add_columns(
   "destination",
   { data_type => "char", is_nullable => 1, size => 30 },
   "appt",
-  {
-    data_type => "datetime",
-    datetime_undef_if_invalid => 1,
-    is_nullable => 1,
-  },
+  { data_type => "char", is_nullable => 1, size => 20 },
   "backhaul",
   { data_type => "char", is_nullable => 1, size => 30 },
   "direction",
-  { data_type => "char", is_nullable => 0, size => 8 },
+  { data_type => "char", is_nullable => 0, size => 10 },
   "rectimestamp",
   {
     data_type => "timestamp",
@@ -139,8 +135,8 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("uuid");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07033 @ 2013-09-25 18:19:43
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Cd7YC6dmpXK75w9vswtwQA
+# Created by DBIx::Class::Schema::Loader v0.07036 @ 2013-10-27 12:31:21
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:nosYRNcjB6LKZ+gLLbTJiA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
